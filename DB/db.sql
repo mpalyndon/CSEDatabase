@@ -54,3 +54,14 @@ CREATE TABLE users(
 );
 ALTER TABLE users AUTO_INCREMENT=1;
 
+CREATE TABLE storeEditors(
+	id bigint NOT NULL AUTO_INCREMENT,
+	storeID bigint NOT NULL,
+	userID bigint NULL,
+
+	PRIMARY KEY (id),
+	FOREIGN KEY storeID REFERENCES stores(id),
+	FOREIGN KEY userID REFERENCES users(id)
+);
+
+ALTER TABLE storeEditors AUTO_INCREMENT=1;
