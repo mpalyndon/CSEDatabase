@@ -1,7 +1,9 @@
 
 /*
-this is broken dont touch unless you know how to fix it
+this works now, needs to be updated with all other constraints / alters
 */
+
+USE csedatabase;
 
 ALTER TABLE users ALTER sname SET DEFAULT 'missing';
 ALTER TABLE users ALTER username SET DEFAULT 'unknown';
