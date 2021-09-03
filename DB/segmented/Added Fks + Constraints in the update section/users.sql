@@ -21,6 +21,5 @@ CREATE TABLE users(
 	isPasswordChanged bit NOT NULL,
 
 	PRIMARY KEY (id)
-	/*FOREIGN KEY (storeID) REFERENCES stores(id)*/
 );
 ALTER TABLE users AUTO_INCREMENT=1;

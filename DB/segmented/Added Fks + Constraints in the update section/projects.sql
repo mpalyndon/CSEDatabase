@@ -12,5 +12,5 @@ CREATE TABLE (
 ALTER TABLE AUTO_INCREMENT=1;
 
 /*
-calls sys.sp_addextendedproperty on some stuff, probably important
+calls some sys.sp_addextendedproperty on some stuff, probably important. idk 
 */

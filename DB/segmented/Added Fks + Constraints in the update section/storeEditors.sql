@@ -1,8 +1,3 @@
-
-/*
-this is broken dont touch unless you know how to fix it
-*/
-
 USE csedatabase;
 
 CREATE TABLE storeEditors(
@@ -11,8 +6,5 @@ CREATE TABLE storeEditors(
 	userID bigint NULL,
 
 	PRIMARY KEY (id)
-	/*FOREIGN KEY storeID REFERENCES stores(id),
-	FOREIGN KEY userID REFERENCES users(id)*/
 );
-
 ALTER TABLE storeEditors AUTO_INCREMENT=1;

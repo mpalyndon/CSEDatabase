@@ -4,7 +4,7 @@ CREATE TABLE units(
     id bigint NOT NULL AUTO_INCREMENT,
     storeID bigint NOT NULL,
     description varchar(255) NOT NULL,
-    disabled bit NOT NULL DEFAULT(0),
+    disabled bit NOT NULL,
 
     PRIMARY KEY (id)    
 );

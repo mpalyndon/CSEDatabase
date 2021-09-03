@@ -10,9 +10,9 @@ CREATE TABLE orders(
     customer varchar(255) NULL,
     email varchar(255) NULL, 
     orderTypeID varchar(255) NULL,
-    isExternal bit NULL DEFAuLT(0),
+    isExternal bit NULL.
     cost money NOT NULL,
-    isOpen bit NOT NULL DEFAULT(1),
+    isOpen bit NOT NULL,
     location varchar(255) NULL,
 
     PRIMARY KEY (id)    

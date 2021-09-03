@@ -2,7 +2,7 @@ USE csedatabase;
 
 CREATE TABLE userAccount(
     id bigint NOT NULL AUTO_INCREMENT,
-    /* userID varchar(255) NULL, */
+    userID varchar(255) NULL,
     validAccCode varchar(255) NULL,
     delete bit NOT NULL DEFAULT(0),
 

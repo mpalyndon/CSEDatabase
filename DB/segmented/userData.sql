@@ -9,4 +9,6 @@ CREATE TABLE userData(
     PRIMARY KEY (userID);
 );
 
-
+/*
+seems useless?
+*/
