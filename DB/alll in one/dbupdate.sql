@@ -19,7 +19,7 @@ ALTER TABLE stores ALTER confirmCancel SET DEFAULT 0;
 /*
 User Table
 */
-ALTER TABLE stores ADD FOREIGN KEY (storeID) REFERENCES stores (id);
+ALTER TABLE users ADD FOREIGN KEY (storeID) REFERENCES stores (id);
 
 ALTER TABLE users ALTER sname SET DEFAULT 'missing';
 ALTER TABLE users ALTER username SET DEFAULT 'unknown';
@@ -34,7 +34,7 @@ accounts Table
 ALTER TABLE accounts ADD FOREIGN KEY (storeID) REFERENCES stores (id);
 ALTER TABLE accounts ADD FOREIGN KEY (projectID) REFERENCES Projects (id);
 
-ALTER TABLE accounts ALTER disabled SET DEFAULT (0));
+ALTER TABLE accounts ALTER active SET DEFAULT (1);
 
 /*
 projects Table
@@ -45,7 +45,7 @@ ALTER TABLE projects ADD FOREIGN KEY (storeID) REFERENCES stores (id);
 allowedAccounts Table
 */
 ALTER TABLE allowedAccounts ADD FOREIGN KEY (userID) REFERENCES users (id);
-ALTER TABLE allowedAccounts ADD FOREIGN KEY (projectID) REFERENCES projects (id);
+ALTER TABLE allowedAccounts ADD FOREIGN KEY (accountID) REFERENCES accounts (id);
 
 /*
 auditTrail Table
@@ -66,11 +66,12 @@ detailedTransactions Table
 ALTER TABLE detailedTransactions ADD FOREIGN KEY (storeID) REFERENCES stores (id);
 ALTER TABLE detailedTransactions ALTER processed SET DEFAULT (1);
 ALTER TABLE detailedTransactions ALTER returned SET DEFAULT (0);
+ALTER TABLE detailedTransactions ALTER loanDueDate SET DEFAULT (NULL);
 
 /*
 items Table
 */
-ALTER TABLE items ADD FOREIGN KEY (catagoryID) REFERENCES catagories (id);
+ALTER TABLE items ADD FOREIGN KEY (categoryID) REFERENCES categories (id);
 ALTER TABLE items ADD FOREIGN KEY (storeID) REFERENCES stores (id);
 ALTER TABLE items ADD FOREIGN KEY (unitsID) REFERENCES units (id);
 ALTER TABLE items ADD FOREIGN KEY (supplierID) REFERENCES suppliers (id);
@@ -131,8 +132,8 @@ ALTER TABLE units ALTER disabled SET DEFAULT (0);
 
 /*
 userAccounts Table
-*/
 ALTER TABLE userAccounts ADD FOREIGN KEY (userID) REFERENCES users (id);
+*/
 
 /*
 supplier Table

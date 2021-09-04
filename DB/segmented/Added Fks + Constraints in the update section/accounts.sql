@@ -6,7 +6,7 @@ CREATE TABLE accounts(
     projectID bigint NOT NULL,
     accountNumber varchar(255) NOT NULL,
     description varchar(255) NULL,
-    disabled bit NOT NULL DEFAULT(0),
+    active bit NOT NULL DEFAULT(0),
     notes varchar(255) NULL,
 
     PRIMARY KEY (id)

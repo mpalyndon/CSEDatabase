@@ -1,6 +1,6 @@
 USE csedatabase;
 
-CREATE TABLE (
+CREATE TABLE projects(
     id bigint NOT NULL AUTO_INCREMENT,
     storeID bigint NOT NULL,
     code varchar(255) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE (
 
     PRIMARY KEY (id)    
 );
-ALTER TABLE AUTO_INCREMENT=1;
+ALTER TABLE projects AUTO_INCREMENT=1;
 
 /*
 calls some sys.sp_addextendedproperty on some stuff, probably important. idk 

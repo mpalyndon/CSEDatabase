@@ -4,7 +4,7 @@ CREATE TABLE userAccount(
     id bigint NOT NULL AUTO_INCREMENT,
     userID varchar(255) NULL,
     validAccCode varchar(255) NULL,
-    delete bit NOT NULL DEFAULT(0),
+    deleted bit NOT NULL DEFAULT(0),
 
     PRIMARY KEY (id)    
 );
