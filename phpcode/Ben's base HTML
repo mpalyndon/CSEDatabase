@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="" /><Ben McIntyre>
+    <meta name="description" content="CSE Front page" />
+    <title>CSE Store Front Page</title>
+    <link rel="stylesheet" href="Styles/style.css">
+  </head>
+  <body>
+    <style>
+        body {
+          background-image: url('images/CSEStoreLogo.jpg');
+          background-repeat: no-repeat;
+          background-size: 700px;
+        }
+        </style>
+        
+    <div class="ContentArea">
+      
+        <h1><b>Stores | CSE Store Details</b></h1>
+     
+          <form action="quiz.html" method="GET">
+
+        <h2>
+             
+            <p>Primary contact:</p>
+            <br>
+            <p>Contact Phone number:</p>
+            <br>
+            <p>Location:</p>
+            <br>
+            <p>Edit store details</p>
+            <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
+            <br>
+            <input type="submit" value="Edit store details" required>
+            
+    </div>
+</h2>
+      
+        
+            </div>
+        
+      </form>
+    </div>
+  </body>
+</html>
 
