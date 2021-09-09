@@ -14,6 +14,28 @@ h2 {
     font-weight: 100;   
 }
 
+h3 {
+    border: 1px solid black;
+    padding: 10px;
+    font-weight: 100;   
+}
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;   
+    font-size: 14px;
+    text-align: left;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: gold;
+
+}
+
+h5 {
+    border: 1px solid black;
+    padding: 10px;
+    font-weight: 100;   
+}
+
 p {
     font-family: Arial, Helvetica, sans-serif;   
     font-size: 14px;
