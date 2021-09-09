@@ -1,0 +1,73 @@
+h1 {
+    font-family: Arial, Helvetica, sans-serif;   
+    font-size: 14px;
+    text-align: left;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: gold;
+
+}
+
+h2 {
+    border: 1px solid black;
+    padding: 10px;
+    font-weight: 100;   
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;   
+    font-size: 14px;
+    text-align: left;
+}
+
+input[type=submit] {
+    width: 120px;
+    background-color: #ff8f00;
+    color: white;
+    padding: 7px 25px;
+    margin: 8px 50;
+    width: 200px;
+    border: solid;
+    cursor: pointer;
+    font-weight: bolder;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #f57c00;
+  }
+    
+  .ContentArea {
+    border: 1px solid black;
+    
+
+    padding: 30px;
+    background-color: white;
+    width: 95%;
+    height: 1000px; /* page scroller adjuster */
+   /* margin: 60px auto; moves the content area up */ 
+   margin: 100px auto;
+
+  }
+  
+  body {
+     background-color:gold;
+    }
+
+input[type=text] {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    width: 100%;
+}
+
+input[type=number] {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    width: 100%;
+    
+}
+
+input[type=email] {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    width: 100%;
+}
