@@ -1,0 +1,145 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+    
+    <link href="/store/Content/ui.all.css"            rel="stylesheet" type="text/css" />
+    <link href="/store/Content/Site.css"              rel="stylesheet" type="text/css" />
+    <link href="/store/Content/jqGridCss/ui.jqgrid.css"      rel="stylesheet" type="text/css" />
+    <link href="/store/Content/StoresButtons.css"            rel="stylesheet" type="text/css" />
+   <link href="/store/Content/jqGridCss/themes/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" title="redmond" media="screen" /> 
+    
+
+    <script type="text/javascript" src="/store/Scripts/jquery-1.8.1.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery-ui-1.8.23.min.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.extensions.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/styleMod.js"></script>
+    <script type="text/javascript" src="/store/Scripts/grid.locale-en.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.fluid.js"></script>
+
+
+    
+<title>
+	
+	Science and Engineering Stores: Stock On Hand Report
+
+</title></head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <!-- 
+                <h1>Science and Engineering Stores</h1>
+                -->
+            </div>
+              
+            <div id="logindisplay">
+                
+        Welcome <b>Mel Schlein </b>!
+        
+        [ <a href="/store/adAuthentication/LogOff">Log Off</a> ]
+        <a href="/store/stores/details/2">Back to Store</a>
+        Roles :[
+        BiologyStore 
+         ]
+ 
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                 <!--   <li><a href="/store/">Home</a></li> -->
+                    <!--<li><a href="/store/Home/About">About</a></li> -->
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            
+     <h2 class="ui-widget-header ui-corner-top ui-helper-clearfix">
+           <a href="/store/Stores/details/2" style="float:left; text-decoration:none">CSE Store</a>
+             <span class="ui-icon ui-icon-circle-triangle-e" style="margin: 4px; float: left" ></span>
+             Stock on Hand Report
+     </h2>
+
+ <form action="/store/reports/stockonhandreport/2" method="post"><input id="storeID" name="storeID" type="hidden" value="2" />
+       <select id="catagoryID" name="catagoryID" onchange="submit()"><option value="-1">All Categories</option>
+<option value="61">Batteries</option>
+<option value="14">Chemicals - Corrosive</option>
+<option value="13">Chemicals - General</option>
+<option value="15">Chemicals - Solvents</option>
+<option value="62">Cleaning &amp; Tidying</option>
+<option value="17">Computer Consumables</option>
+<option value="67">CSE Boat Rental Charges</option>
+<option value="65">CSE Car Rental Charges</option>
+<option value="66">CSE CAS Charges</option>
+<option value="39">Diaries</option>
+<option value="60">Field First Aid Kits</option>
+<option value="58">GLASSWARE</option>
+<option value="18">Hardware - Containers</option>
+<option value="19">Hardware - General</option>
+<option value="64">Labels</option>
+<option value="11">Laboratory - Containers</option>
+<option value="12">Laboratory - General</option>
+<option value="54">LABWARE</option>
+<option value="57">MACHINE SUPPLIES</option>
+<option value="24">Paper and Toners</option>
+<option value="59">PLASTICWARE</option>
+<option value="55">PPE</option>
+<option value="38">Promega</option>
+<option value="20">Safety/Protection</option>
+<option value="22">School Office </option>
+<option value="23">Special Purchases</option>
+<option value="21">Stationery</option>
+<option value="16">Tapes and Ties</option>
+<option value="63">Tubing</option>
+</select>
+
+ </form>
+
+   <p class="buttons"></p>
+
+<!-- 
+  <table width="100%">
+     <tr>
+     <th>
+        Barcode
+     </th>
+     <th>
+       Description
+     </th>
+     <th>
+       Quantity in System
+     </th>
+     <th>
+       Cost per Item
+     </th>
+     <th>
+        Quantity in Hand
+     </th>
+     <th>
+         Notes
+     </th>
+     </tr>
+  
+  </table>
+  -->
+
+  <br />
+   <div class="buttons">
+        <a href = "/store/reports/StockOnHandReportExcel/2?catagory=-1">To Excel</a>
+        <a href="/store/Stores/details/2">Back to Store</a>
+    </div>
+
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+    
+    <link href="/store/Content/ui.all.css"            rel="stylesheet" type="text/css" />
+    <link href="/store/Content/Site.css"              rel="stylesheet" type="text/css" />
+    <link href="/store/Content/jqGridCss/ui.jqgrid.css"      rel="stylesheet" type="text/css" />
+    <link href="/store/Content/StoresButtons.css"            rel="stylesheet" type="text/css" />
+   <link href="/store/Content/jqGridCss/themes/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" title="redmond" media="screen" /> 
+    
+
+    <script type="text/javascript" src="/store/Scripts/jquery-1.8.1.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery-ui-1.8.23.min.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.extensions.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/styleMod.js"></script>
+    <script type="text/javascript" src="/store/Scripts/grid.locale-en.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.fluid.js"></script>
+
+
+    
+<script type="text/javascript">
+    function backToStore() {
+        $.getGo('/store/stores/details/2', {});
+    }
+    function backToList() {
+        $.getGo('/store/stores/listcatagories/2', {});
+    }
+
+</script>
+<title>
+	
+	Science and Engineering Stores: Create Category
+
+</title></head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <!-- 
+                <h1>Science and Engineering Stores</h1>
+                -->
+            </div>
+              
+            <div id="logindisplay">
+                
+        Welcome <b>Mel Schlein </b>!
+        
+        [ <a href="/store/adAuthentication/LogOff">Log Off</a> ]
+        <a href="/store/stores/details/2">Back to Store</a>
+        Roles :[
+        BiologyStore 
+         ]
+ 
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                 <!--   <li><a href="/store/">Home</a></li> -->
+                    <!--<li><a href="/store/Home/About">About</a></li> -->
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            
+
+    <h2 class="ui-widget-header">Create item Category</h2>
+
+    
+
+    <form action="/store/Catagorys/Create/2?" method="post">
+
+        <fieldset>
+            <legend>Fields</legend>
+                <input id="storeID" name="storeID" type="hidden" value="2" />
+            <p>
+                <label for="description">Description :</label>
+                <input id="description" name="description" type="text" value="" />
+                
+            </p>
+            <p class="buttons">
+                 <button style="" type="submit" id="CreateButton" title="Create" class="positive" onclick=""  ><span class="ui-icon ui-icon-circle-plus" style="float: left; margin-right: .3em;"> </span>Create</button>
+                 <button id="CancelButton" title="Cancel" class="negative" onclick="backToList();return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Cancel</button>
+            </p>
+        </fieldset>
+
+    </form>
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,483 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+    
+    <link href="/store/Content/ui.all.css"            rel="stylesheet" type="text/css" />
+    <link href="/store/Content/Site.css"              rel="stylesheet" type="text/css" />
+    <link href="/store/Content/jqGridCss/ui.jqgrid.css"      rel="stylesheet" type="text/css" />
+    <link href="/store/Content/StoresButtons.css"            rel="stylesheet" type="text/css" />
+   <link href="/store/Content/jqGridCss/themes/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" title="redmond" media="screen" /> 
+    
+
+    <script type="text/javascript" src="/store/Scripts/jquery-1.8.1.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery-ui-1.8.23.min.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.extensions.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/styleMod.js"></script>
+    <script type="text/javascript" src="/store/Scripts/grid.locale-en.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.fluid.js"></script>
+
+
+    
+
+    <style type="text/css">
+        .style1
+        {
+            width: 146px;
+        }
+        .style2
+        {
+            width: 112px;
+        }
+        .style3
+        {
+            width: 131px;
+        }
+        .barcodeStyle
+        {
+            width: 50px;
+        }
+        .shortTextBox
+        {
+           width: 10em;
+        }
+         .longTextBox
+        {
+           width: 21em;
+        }
+        .descriptionStyle
+        {
+          width: 20em;
+        }
+        .fullNameStyle
+        {
+          width: 20%;
+        }
+
+    </style>
+
+     <!-- 2 Dialog scripts and send to server functions -->
+     <script type="text/javascript">
+
+         var timeoutFlag;
+
+         function trim(str) {
+             return str.replace(/^\s+|\s+$/g, "");
+             // return str.replace(" ", "");
+         }
+         function changeQuantity(item) {
+             var quantity = $("#quantity" + item).val();
+             $("#dialogItemQuantity").val(quantity);
+             $("#dialogItemID").val(item);
+
+
+             $('#quantityDialog').dialog('open');
+             $('#quantityDialog').position({ my: "center", at: "center", of: window });
+             $("#dialogItemQuantity").select().focus();
+         }
+
+         function changeDescription(item) {
+             var dueDate = $("#description" + item).val();
+             $("#dialogChangeDescription").val(dueDate);
+             $("#dialogDescriptionID").val(item);
+
+             $('#descriptionDialog').dialog('open');
+             $('#descriptionDialog').position({ my: "center", at: "center", of: window });
+             $("#dialogChangeDescription").select().focus();
+         }
+         function changeLoan(item) {
+             var dueDate = $("#loanDueDate" + item).val();
+             $("#dialogDueDate").val(dueDate);
+             var destination = $("#loanDestination" + item).val();
+             $("#dialogDestination").val(destination);
+             var emergencyContact = $("#loanEmergencyContact" + item).val();
+             $("#dialogEmergencyContact").val(emergencyContact);
+             $("#dialogLoanID").val(item);
+             $('#loanDialog').dialog('open');
+             $('#loanDialog').position({ my: "center", at: "center", of: window });
+             $("#dialogDueDate").select().focus();
+         }
+
+         function fixFocus() {
+             $("input#newItemFormBarcode").select().focus();
+         }
+
+         function sendChangeQuantity() {
+             // Set the val back in the window
+             var itemID = $("#dialogItemID").val();
+             var newQuantity = $("#dialogItemQuantity").val();
+             $("#quantity" + itemID).val(newQuantity);
+
+             // push the value to the server (AJAX) 
+             var url = '/store/shopping/changeQuantity/';
+             $.get(url + itemID, { quantity: newQuantity },
+                           function (data) {
+                               alert("Push to Server reply : " + data);
+                           });
+             location.reload();
+         }
+
+         function sendChangeDescription() {
+             // Set the val back in the window
+             var itemID = $("#dialogDescriptionID").val();
+             var newDescription = $("#dialogChangeDescription").val();
+             // $("#dialogChangeDescription" + itemID).val(newQuantity); // No change to DOM, do it via a refresh
+
+             // push the value to the server (AJAX) 
+             var url = '/store/shopping/changeDescription/';
+             $.get(url + itemID, { description: newDescription },
+                           function (data) {
+                               alert("Push to Server reply : " + data);
+                           });
+            location.reload();
+        }
+
+         function sendAddItem() {
+             // Set the val back in the window
+             var itemBarcode = $('#newItemFormBarcode').val();
+
+             // push the value to the server (AJAX) 
+             var url = '/store/shopping/addItem/';
+             var url2 = '/store/shopping/addItemNoGo/';
+
+             //$("#openid_form").attr("action", url);
+             $.postGo(url, {id:itemBarcode,quantity:"1"});
+             
+         }
+
+         function sendChangeLoan() {
+             var itemID = $("#dialogLoanID").val();
+             var dueDate = $("#dialogDueDate").val();
+             if (dueDate == undefined) {
+                 dueDate = "";
+             }
+
+             var destination = $("#dialogDestination").val();
+             if (destination == undefined) {
+                 destination = "";
+             }
+             var emergencyContact = $("#dialogEmergencyContact").val();
+             if (emergencyContact == undefined) {
+                 emergencyContact = "";
+             }
+
+             var url = '/store/shopping/changeLoanDetails/' + itemID;
+             //alert("["+itemID+"][" + dueDate + "][" + destination + "][" + emergencyContact + "]");
+             $.postGo(url, { loanDueDate: dueDate, loanDestination: destination, loanEmergencyContact: emergencyContact });
+
+         }
+
+
+
+
+         $(document).ready(function () {
+
+             $("input#newItemFormBarcode").select().focus();
+
+             // create the dialog object and hide the html it contains
+             $("#quantityDialog").dialog({
+                 // bgiframe: true,
+                 autoOpen: false,
+                 //height: 500,
+                 modal: true,
+                 buttons: {
+                     'Change': function () {
+                         $(this).dialog('close');
+                         // Do something
+                         sendChangeQuantity();
+                     },
+                     Cancel: function () {
+                         $(this).dialog('close');
+                         $("input#newItemFormBarcode").select().focus();
+                     }
+                 },
+                 close: function () {
+                 }
+
+             }); // end dialog definition
+
+             // Tab/enter key override for the dialog ( submits the dialog)
+             $('#quantityDialog').keyup(function (e) {
+                 if (e.keyCode == 13 || e.keyCode == 9) {
+                     sendChangeQuantity();
+                 }
+             });
+
+             // create the dialog object and hide the html it contains
+             $("#descriptionDialog").dialog({
+                 // bgiframe: true,
+                 autoOpen: false,
+                 //height: 500,
+                 modal: true,
+                 buttons: {
+                     'Change': function () {
+
+                         $(this).dialog('close');
+                         // Do something
+                         sendChangeDescription();
+                     },
+                     Cancel: function () {
+                         $(this).dialog('close');
+                         $("input#newItemFormBarcode").select().focus();
+                     }
+                 },
+                 close: function () {
+                 }
+             });
+
+             $('#descriptionDialog').keyup(function (e) {
+                 if (e.keyCode == 13 || e.keyCode == 9) {
+                     sendChangeDescription();
+                 }
+             });
+
+             // create the dialog object and hide the html it contains
+             $("#loanDialog").dialog({
+                 // bgiframe: true,
+                 autoOpen: false,
+                 //height: 500,
+                 modal: true,
+                 buttons: {
+                     'Change': function () {
+                         $(this).dialog('close');
+                         // Do something
+                         sendChangeLoan();
+                     },
+                     Cancel: function () {
+                         $(this).dialog('close');
+                         $("input#newItemFormBarcode").select().focus();
+                     }
+                 },
+                 close: function () {
+                 }
+
+             }); // end dialog definition
+
+
+
+
+             // Tab/enter key override for the dialog ( submits the dialog)
+             $('#loanDialog').keyup(function (e) {
+                 if (e.keyCode == 13 ) {
+                     sendChangeLoan();
+                 }
+             });
+            
+
+
+             $("input#newItemFormBarcode").keyup(function (e) {
+                 if (e.keyCode == 13) {
+                     $('#newItemFormBarcode').trigger('onchange');
+                 }
+             });
+         });
+
+         function remove(id) {
+             $.getGo('/store/shopping/removeItem/'+id, {});
+         }
+
+
+    </script>
+    <title>
+	
+    Science and Engineering Stores: Shopping
+
+</title></head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <!-- 
+                <h1>Science and Engineering Stores</h1>
+                -->
+            </div>
+              
+            <div id="logindisplay">
+                
+        Welcome <b>Mel Schlein </b>!
+        
+        [ <a href="/store/adAuthentication/LogOff">Log Off</a> ]
+        <a href="/store/stores/details/2">Back to Store</a>
+        Roles :[
+        BiologyStore 
+         ]
+ 
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                 <!--   <li><a href="/store/">Home</a></li> -->
+                    <!--<li><a href="/store/Home/About">About</a></li> -->
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            
+   
+    
+      
+    <table >
+        <tr>
+            <td class="fullNameStyle">
+                Mel&nbsp
+                Schlein
+            </td>
+            <td rowspan="2" colspan="6">
+                <h1>
+                    CSE Store
+                </h1>
+            </td>
+        </tr>
+        <tr>
+            <td>Purchasing with Account :<br /><b>ISSP Tied funds</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td  colspan="6">
+                <!-- -->
+                 <p class="error">
+                    
+                 </p>
+            </td>
+        </tr>
+        <tr>
+            <th class="shortTextBox">
+                Barcode
+            </th>
+            <th class="descriptionStyle">
+                Description
+            </th>
+            <th class="style1">
+                Purchase Quantity
+            </th>
+            <th class="style2">
+                Stock Available
+            </th>
+            <th>
+                Units
+            </th>
+            <th class="style3">
+                Cost Per Unit
+            </th>
+            <th>
+                Total
+            </th>
+        </tr>
+        
+        <tr>
+            
+            <td class="style4">
+               <form id="newItemForm" method="post" action="" onsubmit="return false;" >
+                  <!-- <input type="text" id="newItemFormBarcode" onchange="postItem(this.form,this.value);"  autocomplete="off" /> -->
+                  <input type="text" id="newItemFormBarcode" onchange="sendAddItem();"  autocomplete="off" />
+               </form>
+            </td>
+            
+            <td>
+                &nbsp;
+            </td>
+            <td class="style1">
+                &nbsp;
+            </td>
+            <td class="style2">
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            <td class="style3">
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            
+        </tr>
+        <tr>
+            <td colspan="6">
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                
+            </td>
+            <td colspan="3">
+            </td>
+            <td class="style3">
+                Total :
+            </td>
+            <td>
+                $0.00
+            </td>
+        </tr>
+        <tr>
+         <td colspan="7" align="center">
+                 <div class="buttons" style = "margin-left: 40%; margin-right: 40%; width: 20%;" > <a href="/store/stores/details/2" onclick="javascript:return confirm(&#39;Are you sure you want to cancel this order?&#39;)" onfocus="fixFocus();">Cancel</a></div>
+           </td>
+        </tr>
+    </table>
+   
+   
+    <div id="quantityDialog" title="Change Quantity" >
+        <p>
+            Change order quantity</p>
+        <p>
+            Fractional amounts not currently supported</p>
+         <form action="" onsubmit="return false;">
+        <fieldset>
+            <label for="ChangeQuantity">
+                New purchase quantity</label>
+            <input type="text" name="dialogItemQuantity" id="dialogItemQuantity" />
+            <input type="hidden" name="dialogItemID" id="dialogItemID" value="" />
+        </fieldset>
+        </form>
+    </div>
+    <div id="descriptionDialog" title="Change Description">
+        <p>
+            Change item Description</p>
+        
+        <form action="" onsubmit="return false;">
+        <fieldset>
+            <label for="ChangeDescription">
+                New Description</label>
+            <input type="text" name="dialogChangeDescription" id="dialogChangeDescription" />
+            <input type="hidden" name="dialogDescriptionID" id="dialogDescriptionID" value="" />
+        </fieldset>
+        </form>
+    </div>
+     <div id="loanDialog" title="Set Loan details">
+        <p>
+            Set loan details</p>
+        
+        <form action="" onsubmit="return false;">
+        <fieldset>
+            <label for="DueDate">
+                Due Date</label> <input type="text" id="dialogDueDate" name="dialogDueDate" value="10/09/2021" style="width: 75px;" /><script type="text/javascript">$(document).ready(function() { $('#dialogDueDate').datepicker({ dateFormat: 'dd/mm/yy' ,changeMonth: true, changeYear: true  , showOn: 'button', buttonImage: '../Content/images/calendar.gif', duration: 0 }); });</script>
+             <label for="Destination">
+                Destination</label><input type="text" name="dialogDestination" id="dialogDestination" />
+            <label for="EmergencyContact">
+                Emergency Contact</label><input type="text" name="dialogEmergencyContact" id="dialogEmergencyContact" value="" />
+                <input type="hidden" name="dialogLoanID" id="dialogLoanID" value="" />
+        </fieldset>
+        </form>
+    </div>
+    
+
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

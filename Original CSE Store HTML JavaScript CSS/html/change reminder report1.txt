@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+    
+    <link href="/store/Content/ui.all.css"            rel="stylesheet" type="text/css" />
+    <link href="/store/Content/Site.css"              rel="stylesheet" type="text/css" />
+    <link href="/store/Content/jqGridCss/ui.jqgrid.css"      rel="stylesheet" type="text/css" />
+    <link href="/store/Content/StoresButtons.css"            rel="stylesheet" type="text/css" />
+   <link href="/store/Content/jqGridCss/themes/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" title="redmond" media="screen" /> 
+    
+
+    <script type="text/javascript" src="/store/Scripts/jquery-1.8.1.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery-ui-1.8.23.min.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.extensions.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/styleMod.js"></script>
+    <script type="text/javascript" src="/store/Scripts/grid.locale-en.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.fluid.js"></script>
+
+
+    
+<title>
+	
+	changeRemindersReport
+
+</title></head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <!-- 
+                <h1>Science and Engineering Stores</h1>
+                -->
+            </div>
+              
+            <div id="logindisplay">
+                
+        Welcome <b>Mel Schlein </b>!
+        
+        [ <a href="/store/adAuthentication/LogOff">Log Off</a> ]
+        <a href="/store/stores/details/2">Back to Store</a>
+        Roles :[
+        BiologyStore 
+         ]
+ 
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                 <!--   <li><a href="/store/">Home</a></li> -->
+                    <!--<li><a href="/store/Home/About">About</a></li> -->
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            
+
+
+    <h2>All Users with reminders</h2>
+
+    <table>
+        <tr>
+            <th></th>
+           
+            <th>
+                firstname
+            </th>
+            <th>
+                surname
+            </th>
+            <th>
+                preferredName
+            </th>
+            <th>
+                username
+            </th>
+            <th>
+                barcodes
+            </th>
+            <th>
+                location
+            </th>
+            <th>
+                type
+            </th>
+            <th>
+                startDate
+            </th>
+            <th>
+                finishDate
+            </th>
+            <th>
+                schoolArea
+            </th>
+            <th>
+                changeReminder
+            </th>
+            <th>
+                reminderNotes
+            </th>
+            <th>
+                notes
+            </th>
+            <th>
+                reminderDate
+            </th>
+        </tr>
+
+    
+    
+        <tr>
+            <td>
+                <a href="/store/users/Edit/7215">Edit</a> 
+            </td>
+            <td>
+                Hussain
+            </td>
+            <td>
+                Al Nasser
+            </td>
+            <td>
+                
+            </td>
+            <td>
+                alna0047
+            </td>
+            <td>
+                10105837598
+            </td>
+            <td>
+                
+            </td>
+            <td>
+                Masters
+            </td>
+            <td>
+                03/03/2014
+            </td>
+            <td>
+                12/16/2015
+            </td>
+            <td>
+                CAPS
+            </td>
+            <td>
+                True
+            </td>
+            <td>
+                Account changed 05/02/15.MS
+EXIT.MS.16/15/15
+            </td>
+            <td>
+                Minimum use for first year
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+    
+    
+    
+        <tr>
+            <td>
+                <a href="/store/users/Edit/7758">Edit</a> 
+            </td>
+            <td>
+                Alison
+            </td>
+            <td>
+                Nicolson
+            </td>
+            <td>
+                
+            </td>
+            <td>
+                nico0064
+            </td>
+            <td>
+                10105936219
+            </td>
+            <td>
+                
+            </td>
+            <td>
+                Research Assistant
+            </td>
+            <td>
+                04/19/2016
+            </td>
+            <td>
+                
+            </td>
+            <td>
+                
+            </td>
+            <td>
+                True
+            </td>
+            <td>
+                EXIT.MS.01/02/2016
+New - Lab tech 22/04/2016
+            </td>
+            <td>
+                
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+    
+    
+
+    </table>
+
+    <p>
+        <a href="/store/stores/details/2">Back to Store</a>
+    </p>
+
+
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

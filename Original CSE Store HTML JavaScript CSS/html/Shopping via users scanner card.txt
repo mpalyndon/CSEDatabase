@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+    
+    <link href="/store/Content/ui.all.css"            rel="stylesheet" type="text/css" />
+    <link href="/store/Content/Site.css"              rel="stylesheet" type="text/css" />
+    <link href="/store/Content/jqGridCss/ui.jqgrid.css"      rel="stylesheet" type="text/css" />
+    <link href="/store/Content/StoresButtons.css"            rel="stylesheet" type="text/css" />
+   <link href="/store/Content/jqGridCss/themes/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" title="redmond" media="screen" /> 
+    
+
+    <script type="text/javascript" src="/store/Scripts/jquery-1.8.1.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery-ui-1.8.23.min.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.extensions.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/styleMod.js"></script>
+    <script type="text/javascript" src="/store/Scripts/grid.locale-en.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.fluid.js"></script>
+
+
+    
+<title>
+	
+	Science and Engineering Stores: User Selection
+
+</title></head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <!-- 
+                <h1>Science and Engineering Stores</h1>
+                -->
+            </div>
+              
+            <div id="logindisplay">
+                
+        Welcome <b>Mel Schlein </b>!
+        
+        [ <a href="/store/adAuthentication/LogOff">Log Off</a> ]
+        <a href="/store/stores/details/2">Back to Store</a>
+        Roles :[
+        BiologyStore 
+         ]
+ 
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                 <!--   <li><a href="/store/">Home</a></li> -->
+                    <!--<li><a href="/store/Home/About">About</a></li> -->
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            
+<script type="text/javascript">
+
+    // focus on the text box
+    $(document).ready(function() {
+        $("input#userBarCode").select().focus();
+        $("input#userBarCode").blur(function(){
+            $("input#userBarCode").select().focus();
+        });
+    });
+
+</script>
+
+<center>
+  <h1 > CSE Store
+ 
+      </h1>
+      
+    <h3 class="ui-widget-header ui-corner-top ui-helper-clearfix">To start purchasing, scan the barcode on your ID Card</h3>
+  
+       <form action="/store/shopping/selectUser?storeID=2" method="post">
+    <fieldset>
+           <input autocomplete="off" id="userBarCode" name="userBarCode" onchange="submit();" type="text" value="" />
+           <input id="storeID" name="storeID" type="hidden" value="2" />
+           <div class="buttons"><input class="noPad" type="submit" value="Select" style="float:none" /></div>
+    </fieldset>
+    </form>
+</center>  
+<p class="buttons"><a href="/store/stores/details/2">Return to store</a></p>
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

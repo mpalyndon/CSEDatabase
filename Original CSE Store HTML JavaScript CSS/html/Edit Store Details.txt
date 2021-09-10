@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+    
+    <link href="/store/Content/ui.all.css"            rel="stylesheet" type="text/css" />
+    <link href="/store/Content/Site.css"              rel="stylesheet" type="text/css" />
+    <link href="/store/Content/jqGridCss/ui.jqgrid.css"      rel="stylesheet" type="text/css" />
+    <link href="/store/Content/StoresButtons.css"            rel="stylesheet" type="text/css" />
+   <link href="/store/Content/jqGridCss/themes/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" title="redmond" media="screen" /> 
+    
+
+    <script type="text/javascript" src="/store/Scripts/jquery-1.8.1.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery-ui-1.8.23.min.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.extensions.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/styleMod.js"></script>
+    <script type="text/javascript" src="/store/Scripts/grid.locale-en.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.fluid.js"></script>
+
+
+    <title>
+	
+	Science and Engineering Stores : Edit Store
+
+</title></head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <!-- 
+                <h1>Science and Engineering Stores</h1>
+                -->
+            </div>
+              
+            <div id="logindisplay">
+                
+        Welcome <b>Mel Schlein </b>!
+        
+        [ <a href="/store/adAuthentication/LogOff">Log Off</a> ]
+        <a href="/store/stores/details/2">Back to Store</a>
+        Roles :[
+        BiologyStore 
+         ]
+ 
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                 <!--   <li><a href="/store/">Home</a></li> -->
+                    <!--<li><a href="/store/Home/About">About</a></li> -->
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            
+
+     <p>
+       <a href="/store/Stores/details/2">CSE Store</a>
+     </p>
+    <h2>Editing details for CSE Store</h2>
+
+    
+
+    <form action="/store/stores/Edit/2" method="post">
+
+        <fieldset>
+            <legend>Fields</legend>
+          
+           <div class="editor-label">
+                <label for="Description">Description:</label>
+                </div>
+                <input id="Description" name="Description" type="text" value="CSE Store" />
+                
+           
+            <div class="editor-label">
+                <label for="contactName">contactName:</label>
+                </div>
+                <input id="contactName" name="contactName" type="text" value="CSE Store" />
+                
+            
+            <div class="editor-label">
+                <label for="contactPhone">contactPhone:</label>
+                </div>
+                <input id="contactPhone" name="contactPhone" type="text" value="" />
+                
+            
+            <div class="editor-label">
+                <label for="location">location:</label>
+                </div>
+                <input id="location" name="location" type="text" value="CAPS 3211" />
+                
+            <div class="editor-label">
+                <label for="location">% Markup:</label>
+                </div>
+                <input id="markup" name="markup" type="text" value="0" />
+                
+
+
+            <div class="editor-label">
+                <label for="ohsPurchasing">Use OHS Purchasing Warnings:</label>
+                </div>
+                <input id="ohsPurchasing" name="ohsPurchasing" type="checkbox" value="true" /><input name="ohsPurchasing" type="hidden" value="false" />
+                
+          <!--  
+             <div class="editor-label">
+               Require approval for OHS
+            </div>
+            <div class="editor-field">
+                //: Html.CheckBoxFor(model => model.ohsApproval) %>
+                //: Html.ValidationMessageFor(model => model.ohsApproval) %>
+            </div>
+            -->
+            <div class="editor-label">
+                Enable Loans
+            </div>
+            <div class="editor-field">
+                <input checked="checked" id="loansEnabled" name="loansEnabled" type="checkbox" value="true" /><input name="loansEnabled" type="hidden" value="false" />
+                
+            </div>
+           <!--
+            <div class="editor-label">
+                Require Approval for loans
+            </div>
+            <div class="editor-field">
+               //: Html.CheckBoxFor(model => model.loanApproval) %>
+                //: Html.ValidationMessageFor(model => model.loanApproval) %>
+            </div>
+            -->
+            <div class="editor-label">
+                Orders Module Enabled
+            </div>
+            
+            <div class="editor-field">
+                <input id="ordersEnabled" name="ordersEnabled" type="checkbox" value="true" /><input name="ordersEnabled" type="hidden" value="false" />
+                
+            </div>
+             <div class="editor-label">
+                Confirm Purchase Dialogs enabled
+            </div>
+            <div class="editor-field">
+                <input checked="checked" id="confirmPurchases" name="confirmPurchases" type="checkbox" value="true" /><input name="confirmPurchases" type="hidden" value="false" />
+                
+            </div>
+             <div class="editor-label">
+                Confirm Cancel Dialogs enabled
+            </div>
+            <div class="editor-field">
+                <input checked="checked" id="confirmCancel" name="confirmCancel" type="checkbox" value="true" /><input name="confirmCancel" type="hidden" value="false" />
+                
+            </div>
+
+
+             <div class="editor-label">
+                <label for="allowOverBuying">Allow over purchasing of stock:</label>
+                </div>
+                <input checked="checked" id="allowOverBuying" name="allowOverBuying" type="checkbox" value="true" /><input name="allowOverBuying" type="hidden" value="false" />
+                
+            
+            <div class="editor-label">
+               Manager User Group
+               </div>
+               <select id="adGroup" name="adGroup">
+               
+                    <option value="BiologyStore" selected=selected > BiologyStore</option>
+                    
+                    <option value="CAPSElectronicsStore"  > CAPSElectronicsStore</option>
+                    
+                    <option value="CAPSStoresGroup"  > CAPSStoresGroup</option>
+                    
+                    <option value="Electronics"  > Electronics</option>
+                    
+                    <option value="ElectronicsStore"  > ElectronicsStore</option>
+                    
+                    <option value="StoresAdministrator"  > StoresAdministrator</option>
+                    
+                    <option value="StoresGroup"  > StoresGroup</option>
+                    
+                    <option value="TestStore"  > TestStore</option>
+                    
+               
+               </select>
+            
+            <div class="editor-label">
+               Public purchasing Computer
+            </div>
+              <input id="publicPurchasingComputer" name="publicPurchasingComputer" type="text" value="HJM9HJ2" />
+              This client may be : 43VZV23 (10.24.145.26)
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    </form>
+
+    <div>
+        <a href="/store/stores/details/2">Cancel</a>
+    </div>
+
+    
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

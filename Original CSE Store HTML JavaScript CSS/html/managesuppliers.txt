@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+    
+    <link href="/store/Content/ui.all.css"            rel="stylesheet" type="text/css" />
+    <link href="/store/Content/Site.css"              rel="stylesheet" type="text/css" />
+    <link href="/store/Content/jqGridCss/ui.jqgrid.css"      rel="stylesheet" type="text/css" />
+    <link href="/store/Content/StoresButtons.css"            rel="stylesheet" type="text/css" />
+   <link href="/store/Content/jqGridCss/themes/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" title="redmond" media="screen" /> 
+    
+
+    <script type="text/javascript" src="/store/Scripts/jquery-1.8.1.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery-ui-1.8.23.min.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.extensions.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/styleMod.js"></script>
+    <script type="text/javascript" src="/store/Scripts/grid.locale-en.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.fluid.js"></script>
+
+
+    
+ <!-- //Actions  User  Account  Description  Quantity  Unit Price  Total Price  StockOnHandAfter  Purchase Date -->
+
+<script type="text/javascript" >
+
+
+
+
+      //width: 1000, height: 310,
+function resize_the_grid() {
+        $('#supplierGrid').fluidGrid({ offset: -80 });
+    }
+       $(document).ready(function () {
+           $("#supplierGrid").jqGrid({
+               url: '/store/suppliers/listJSON/2',
+               datatype: 'json',
+               mtype: 'GET',
+               colNames: ['Actions', 'Name','Address','Contact', 'Phone','Mobile','Fax'],
+               colModel: [
+               { name: 'actions', index: 'actions', align: 'left' ,sortable: false },
+               { name: 'name', index: 'name', align: 'center'},
+               { name: 'address', index: 'Address', align: 'center'},
+               { name: 'Contact', index: 'contactName', align: 'center' },
+               { name: 'Phone', index: 'phoneNumber', align: 'center' },
+               { name: 'mobile', index: 'mobileNumber', align: 'center' },
+               { name: 'fax', index: 'faxNumber', align: 'center' }
+               ],
+               pager: jQuery('#pager'),
+               rowNum: 11,
+               sortname: 'name',
+               sortorder: "asc",
+               viewrecords: true,
+               height:"320",     
+               caption: 'Suppliers'
+           });
+           resize_the_grid();
+       });
+
+    $(window).resize(resize_the_grid);
+
+    function clearValues() {
+        $("#searchString").val("");
+    }
+    function backToStore() {
+        $.getGo('/store/stores/details/2', {});
+    }
+
+    function createSupplier() {
+        $.getGo('/store/suppliers/Create/2', {});
+
+    }
+    function importSuppliers() {
+        $.getGo('/store/suppliers/import/2', {});
+
+    }
+    function clearSuppliers() {
+        $.getGo('/store/suppliers/clear/2', {});
+
+    }
+
+    </script>
+
+
+<title>
+	
+    Science and Engineering Stores:  List Suppliers
+
+</title></head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <!-- 
+                <h1>Science and Engineering Stores</h1>
+                -->
+            </div>
+              
+            <div id="logindisplay">
+                
+        Welcome <b>Mel Schlein </b>!
+        
+        [ <a href="/store/adAuthentication/LogOff">Log Off</a> ]
+        <a href="/store/stores/details/2">Back to Store</a>
+        Roles :[
+        BiologyStore 
+         ]
+ 
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                 <!--   <li><a href="/store/">Home</a></li> -->
+                    <!--<li><a href="/store/Home/About">About</a></li> -->
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            
+
+
+    <h2 class="ui-widget-header ui-corner-top ui-helper-clearfix">
+             <a href="/store/Stores/details/2" style="float:left; text-decoration:none">CSE Store</a>
+             <span class="ui-icon ui-icon-circle-triangle-e" style="margin: 4px; float: left" ></span>
+             Suppliers
+     </h2>
+    <form action="/store/suppliers/list/2" method="post">
+    <fieldset>
+        <input id="storeID" name="storeID" type="hidden" value="2" />
+        <table>
+            <tr>
+              <td rowspan="4" >
+                  Search Suppliers<br />
+                   <ul>
+                   <li>Names</li>
+                   <li>Contacts</li>
+                   <li>Supervisor</li>
+                 </ul>
+              </td> 
+              
+              <td>
+
+                    
+              </td>
+               <td class="buttons">
+                  
+              </td>
+            </tr>
+            
+            <tr>
+                
+                <td>
+                    
+                  <input id="searchString" name="searchString" type="text" value="" />
+                  
+                </td>
+                <td class="buttons">
+                 
+                
+                 
+              </td>
+            </tr>
+            <tr>
+                 <td class="buttons">
+                    <button style="" type="submit" id="SearchButton" title="Search on the parameters given" class="positive" onclick=""  ><span class="ui-icon ui-icon-search" style="float: left; margin-right: .3em;"> </span>Search</button>
+                    <button style="" type="submit" id="ClearButton" title="Clear search parameters" class="negative" onclick="clearValues()"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Clear</button>
+                    <button id="Add supplierButton" title="Add supplier" class="positive " onclick="createSupplier();return false;"  ><span class="ui-icon ui-icon-circle-plus" style="float: left; margin-right: .3em;"> </span>Add supplier</button>&nbsp;
+                </td>
+             </tr>
+            
+        </table>
+    </fieldset>
+    </form>
+    <p class="buttons">
+        <button id="Back to StoreButton" title="Back to Store" class="" onclick="backToStore();return false;"  ><span class="ui-icon ui-icon-circle-triangle-w" style="float: left; margin-right: .3em;"> </span>Back to Store</button>&nbsp;
+    </p>
+
+<table  id="supplierGrid" class="scroll" cellpadding="0" cellspacing="0"></table>
+
+<div  id="pager" class="scroll" style="text-align:center;"></div>
+   <p class="buttons">
+        <button id="Back to StoreButton" title="Back to Store" class="" onclick="backToStore();return false;"  ><span class="ui-icon ui-icon-circle-triangle-w" style="float: left; margin-right: .3em;"> </span>Back to Store</button>&nbsp;
+    </p>
+
+
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

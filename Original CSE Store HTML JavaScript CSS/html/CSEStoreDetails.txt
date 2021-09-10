@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+    
+    <link href="/store/Content/ui.all.css"            rel="stylesheet" type="text/css" />
+    <link href="/store/Content/Site.css"              rel="stylesheet" type="text/css" />
+    <link href="/store/Content/jqGridCss/ui.jqgrid.css"      rel="stylesheet" type="text/css" />
+    <link href="/store/Content/StoresButtons.css"            rel="stylesheet" type="text/css" />
+   <link href="/store/Content/jqGridCss/themes/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" title="redmond" media="screen" /> 
+    
+
+    <script type="text/javascript" src="/store/Scripts/jquery-1.8.1.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery-ui-1.8.23.min.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.extensions.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/styleMod.js"></script>
+    <script type="text/javascript" src="/store/Scripts/grid.locale-en.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.fluid.js"></script>
+
+
+    
+    <style type="text/css">
+        .noBorder table, .noBorder tr, .noBorder td
+        {
+            border-style: none;
+        }
+    </style>
+    <script type="text/javascript">
+        function doAdminShop() {
+            $.getGo('/store/shopping/startAuthenticated/2', {});
+
+        }
+        function doNormalShop() {
+            $.getGo('/store/shopping/start/2', {});
+        }
+    
+    
+    </script>
+<title>
+	
+    Science and Engineering Stores: Store Detail
+
+</title></head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <!-- 
+                <h1>Science and Engineering Stores</h1>
+                -->
+            </div>
+              
+            <div id="logindisplay">
+                
+        Welcome <b>Mel Schlein </b>!
+        
+        [ <a href="/store/adAuthentication/LogOff">Log Off</a> ]
+        <a href="/store/stores/details/2">Back to Store</a>
+        Roles :[
+        BiologyStore 
+         ]
+ 
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                 <!--   <li><a href="/store/">Home</a></li> -->
+                    <!--<li><a href="/store/Home/About">About</a></li> -->
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            
+   
+    <h2 class="ui-widget-header ui-corner-top ui-helper-clearfix">
+        <a href="/store/" style="float:left; text-decoration:none">Stores</a>
+        <span class="ui-icon ui-icon-circle-triangle-e" style="margin: 4px; float: left">
+        </span>
+        CSE Store
+        details
+    </h2>
+    <fieldset>
+        <table class="noBorder" width="60%">
+            <tr>
+                <td width="30%">
+                    Primary Contact:
+                </td>
+                <td width="40%">
+                    CSE Store
+                </td>
+                <td rowspan="3" valign="top">
+                    Allowing Overpurchasing <br />Loans enabled <br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Contact Phone Number:
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Location:
+                </td>
+                <td>
+                    CAPS 3211
+                </td>
+            </tr>
+        </table>
+        
+        <br />
+        
+        <div class="buttons">
+            <a href="/store/Stores/Edit/2">Edit Store Details</a></div>
+    </fieldset>
+    <div class="buttons ">
+        <button id="Start ShoppingButton" title="Start Shopping" class="positive" onclick="doAdminShop()"  ><span class="ui-icon ui-icon-cart" style="float: left; margin-right: .3em;"> </span>Start Shopping</button>
+        
+        - Administrative updates/repurchases
+    </div>
+    <br />
+    <div class="buttons">
+        <button id="Start ShoppingButton" title="Start Shopping" class="positive" onclick="doNormalShop()"  ><span class="ui-icon ui-icon-cart" style="float: left; margin-right: .3em;"> </span>Start Shopping</button>
+        
+        - Shopping from a user's card via scanner
+    </div><br />
+    <table class="noBorder">
+        <tr>
+            <td width="40%" valign="top">
+               
+                <h3 class="ui-widget-header ui-corner-top ui-helper-clearfix">
+                    Accounting</h3>
+                <table class="noBorder">
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/projects/list/2">Manage Projects</a>
+                        </td>
+                        <td>
+                            (
+                            220
+                            )
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/accounts/list/2">Manage Accounts</a>
+                        </td>
+                        <td>
+                            (
+                            1301
+                            )
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/users/list/2">Manage Users</a>
+                        </td>
+                        <td>
+                            (
+                            2032
+                            )
+                        </td>
+                    </tr>
+                      
+                    
+                </table>
+                <h3 class="ui-widget-header ui-corner-top ui-helper-clearfix">
+                    Inventory</h3>
+                <table class="noBorder">
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/items/list/2">Manage Items</a>
+                        </td>
+                        <td>
+                            (
+                            3565
+                            )
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/suppliers/list/2">Manage Suppliers</a>
+                        </td>
+                        <td>
+                            (
+                            75
+                            )
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/Stores/listCatagories/2">Manage Catagories</a>
+                        </td>
+                        <td>
+                            (
+                            29
+                            )
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/units/list/2">Manage Units</a>
+                        </td>
+                        <td>
+                            (
+                            78
+                            )
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/transactions/list/2">View Transactions</a>
+                        </td>
+                        <td>
+                            (
+                            115053
+                            )
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top">
+                <h3 class="ui-widget-header ui-corner-top ui-helper-clearfix">
+                    Reporting</h3>
+                <table class="noBorder">
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/reports/chargingjournalreportexcel/2">Charging Journal Report (to Excel)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/reports/chargingsummaryreportexcel/2">Charging Summary Report (to Excel)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/reports/stockonhandreport/2">Stock on Hand for Stocktake</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/reports/inventoryPurchaseHistoryreport/2">Inventory Purchase History</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/users/changeRemindersReport?storeID=2">User Change reminders</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/reports/lowstockreport?storeID=2">Items below low stock Level</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/reports/UserTransactionReport/2">User/Account transactions</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/reports/UsersPerProject/2">Users in projects</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/reports/userList/2">User List</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="buttons">
+                            <a Class="flow" href="/store/reports/accountListReport/2">Account List</a>
+                        </td>
+                    </tr>
+                   
+                </table>
+            </td>
+            <td valign="top">
+                
+                <h3 class="ui-widget-header ui-corner-top ui-helper-clearfix">
+                    Loans</h3>
+                <table>
+                    <tr>
+                        <td class="buttons ">
+                            <a href="/store/loans/list/2">List loans</a>
+                        </td>
+                        <td>
+                            (
+                            0
+                            )
+                        </td>
+                    </tr>
+                </table>
+                
+            </td>
+        </td>
+            </tr>
+    </table>
+ 
+    <p class="buttons">
+        <a href="/store/">Back to List</a>
+    </p>
+
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

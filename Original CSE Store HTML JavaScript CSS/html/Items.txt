@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+    
+    <link href="/store/Content/ui.all.css"            rel="stylesheet" type="text/css" />
+    <link href="/store/Content/Site.css"              rel="stylesheet" type="text/css" />
+    <link href="/store/Content/jqGridCss/ui.jqgrid.css"      rel="stylesheet" type="text/css" />
+    <link href="/store/Content/StoresButtons.css"            rel="stylesheet" type="text/css" />
+   <link href="/store/Content/jqGridCss/themes/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" title="redmond" media="screen" /> 
+    
+
+    <script type="text/javascript" src="/store/Scripts/jquery-1.8.1.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery-ui-1.8.23.min.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.extensions.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/styleMod.js"></script>
+    <script type="text/javascript" src="/store/Scripts/grid.locale-en.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.fluid.js"></script>
+
+
+    
+ <!-- //Actions  User  Account  Description  Quantity  Unit Price  Total Price  StockOnHandAfter  Purchase Date -->
+
+<script type="text/javascript" >
+
+    function resize_the_grid() {
+        $('#accountGrid').fluidGrid({ offset: -80 });
+    }
+
+       jQuery(document).ready(function () {
+           jQuery("#accountGrid").jqGrid({
+               url: '/store/items/listJSON/2',
+               datatype: 'json',
+               mtype: 'GET',
+               colNames: ['Actions', 'Description', 'Barcode', 'Inventory', 'Units', 'Price Per Unit', 'Category', 'Supplier', 'Part Number', 'storelocation', 'enabled'],
+               colModel: [
+               { name: 'actions', index: 'actions', align: 'center' ,sortable: false, width: 80  },
+               { name: 'Description', index: 'description', align: 'center', width: 500 },
+               { name: 'Barcode', index: 'barcode', align: 'center' },
+               { name: 'inventoryLevel', index: 'inventoryLevel', align: 'center' },
+               { name: 'units', index: 'units', align: 'center' },
+               { name: 'priceperunit', index: 'priceperunit', align: 'center' },
+               { name: 'catagory', index: 'catagory', align: 'center' },
+               { name: 'supplier', index: 'supplier', align: 'center' },
+               { name: 'supplierpartnumber', index: 'supplierpartnumber', align: 'center' },
+               { name: 'storelocation', index: 'storelocation', align: 'center' },
+               { name: 'enabled', index: 'enabled', align: 'center'}],
+               pager: jQuery('#pager'),
+               rowNum: 11,
+               autowidth: true,
+               sortname: 'description',
+               sortorder: "asc",
+               viewrecords: true,
+               height: "320",
+               imgpath: '/store/Content/jqGridCss/themes/steel/images',
+               caption: 'Items'
+           });
+           resize_the_grid();
+       });
+       $(window).resize(resize_the_grid);
+    function clearValues() {
+        $("#searchString").val("");
+        $("#searchStoreID").val("2");
+        $("#catagoryID").val("-1");
+    }
+
+    function changeStockLevel(itemID,value) {
+     
+        $.get('/store/items/changeStockOnHand/' + itemID, { inventoryLevel: value }  );
+    }
+    function createNewItem() {
+        $.getGo('/store/items/create/2', {});
+    }
+
+    function backToStore() {
+        $.getGo('/store/stores/details/2', {});
+    }
+
+    </script>
+
+
+<title>
+	
+    Science and Engineering Stores: List Items
+
+</title></head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <!-- 
+                <h1>Science and Engineering Stores</h1>
+                -->
+            </div>
+              
+            <div id="logindisplay">
+                
+        Welcome <b>Mel Schlein </b>!
+        
+        [ <a href="/store/adAuthentication/LogOff">Log Off</a> ]
+        <a href="/store/stores/details/2">Back to Store</a>
+        Roles :[
+        BiologyStore 
+         ]
+ 
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                 <!--   <li><a href="/store/">Home</a></li> -->
+                    <!--<li><a href="/store/Home/About">About</a></li> -->
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            
+
+
+    <h2 class="ui-widget-header ui-corner-top ui-helper-clearfix">
+             <a href="/store/Stores/details/2" style="float:left; text-decoration:none">CSE Store</a>
+             <span class="ui-icon ui-icon-circle-triangle-e" style="margin: 4px; float: left" ></span>
+             Items
+     </h2>
+
+    <form action="/store/items/list/2" method="post">
+    <fieldset>
+        <input id="storeID" name="storeID" type="hidden" value="2" />
+        <table>
+            <tr>
+            <td rowspan="4" >
+               Search Items<br />
+                <ul>
+                 <li>Barcode</li>
+                 <li>Description</li>
+                 <li>Supplier</li>
+               </ul>
+            </td> 
+       
+                <td>
+                    Store to Search
+                </td>
+                <td>
+                   <select id="searchStoreID" name="searchStoreID" onchange="submit()"><option value="1">CAPS Store</option>
+<option selected="selected" value="2">CSE Store</option>
+<option value="6">Electronics</option>
+<option value="3">Test Store</option>
+</select>
+                </td>
+                <td class="buttons">
+                  
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Category
+                </td>
+                <td>
+                    <select id="catagoryID" name="catagoryID" onchange="submit()"><option value="-1">All Categories</option>
+<option value="61">Batteries</option>
+<option value="14">Chemicals - Corrosive</option>
+<option value="13">Chemicals - General</option>
+<option value="15">Chemicals - Solvents</option>
+<option value="62">Cleaning &amp; Tidying</option>
+<option value="17">Computer Consumables</option>
+<option value="67">CSE Boat Rental Charges</option>
+<option value="65">CSE Car Rental Charges</option>
+<option value="66">CSE CAS Charges</option>
+<option value="39">Diaries</option>
+<option value="60">Field First Aid Kits</option>
+<option value="58">GLASSWARE</option>
+<option value="18">Hardware - Containers</option>
+<option value="19">Hardware - General</option>
+<option value="64">Labels</option>
+<option value="11">Laboratory - Containers</option>
+<option value="12">Laboratory - General</option>
+<option value="54">LABWARE</option>
+<option value="57">MACHINE SUPPLIES</option>
+<option value="24">Paper and Toners</option>
+<option value="59">PLASTICWARE</option>
+<option value="55">PPE</option>
+<option value="38">Promega</option>
+<option value="20">Safety/Protection</option>
+<option value="22">School Office </option>
+<option value="23">Special Purchases</option>
+<option value="21">Stationery</option>
+<option value="16">Tapes and Ties</option>
+<option value="63">Tubing</option>
+</select>
+                </td>
+                <td class="buttons">
+                
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="searchString">
+                      Search Criteria
+            </label>
+                </td>
+                <td>
+                    
+                  <input id="searchString" name="searchString" type="text" value="" />
+                  
+                    <input id="showDisabled" name="showDisabled" onclick="submit()" type="checkbox" value="true" /><input name="showDisabled" type="hidden" value="false" />Show Disabled
+                </td>
+                <td class="buttons">
+                 
+                   
+                </td>
+            </tr>
+            <tr>
+            <td></td>
+                <td class="buttons">
+                   <button style="" type="submit" id="SearchButton" title="Search on the parameters given" class="positive" onclick=""  ><span class="ui-icon ui-icon-check" style="float: left; margin-right: .3em;"> </span>Search</button>
+                   <button style="" type="submit" id="ClearButton" title="Search on the parameters given" class="negative" onclick="clearValues()"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Clear</button>
+                 <button id="Create New ItemButton" title="Create New Item" class="positive" onclick="createNewItem();return false;"  ><span class="ui-icon ui-icon-circle-plus" style="float: left; margin-right: .3em;"> </span>Create New Item</button>   
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    </form>
+    
+     <p class="buttons">
+        <button id="Back to StoreButton" title="Back to Store" class="" onclick="backToStore();return false;"  ><span class="ui-icon ui-icon-circle-triangle-w" style="float: left; margin-right: .3em;"> </span>Back to Store</button>&nbsp;
+    </p>
+
+<table  id="accountGrid" class="scroll" cellpadding="0" cellspacing="0"></table>
+
+<div  id="pager" class="scroll" style="text-align:center;"></div>
+  <p class="buttons">
+        <button id="Back to StoreButton" title="Back to Store" class="" onclick="backToStore();return false;"  ><span class="ui-icon ui-icon-circle-triangle-w" style="float: left; margin-right: .3em;"> </span>Back to Store</button>&nbsp;
+    </p>
+
+
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
