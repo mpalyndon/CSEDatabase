@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+    
+    <link href="/store/Content/ui.all.css"            rel="stylesheet" type="text/css" />
+    <link href="/store/Content/Site.css"              rel="stylesheet" type="text/css" />
+    <link href="/store/Content/jqGridCss/ui.jqgrid.css"      rel="stylesheet" type="text/css" />
+    <link href="/store/Content/StoresButtons.css"            rel="stylesheet" type="text/css" />
+   <link href="/store/Content/jqGridCss/themes/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" title="redmond" media="screen" /> 
+    
+
+    <script type="text/javascript" src="/store/Scripts/jquery-1.8.1.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery-ui-1.8.23.min.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.extensions.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/styleMod.js"></script>
+    <script type="text/javascript" src="/store/Scripts/grid.locale-en.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.fluid.js"></script>
+
+
+    
+ <!-- //Actions  User  Account  Description  Quantity  Unit Price  Total Price  StockOnHandAfter  Purchase Date -->
+
+<script type="text/javascript" >
+
+    function resize_the_grid() {
+        $('#loanGrid').fluidGrid({ offset: -80 });
+    }
+
+    jQuery(document).ready(function () {
+        // wire up your grid
+        jQuery("#loanGrid").jqGrid({
+            url: '/store/loans/listJSON/2',
+            datatype: 'json',
+            mtype: 'GET',
+            colNames: ['Actions', 'User','Supervisor', 'Account', 'Description', 'Destination', 'Contact', 'Quantity', 'UnitPrice', 'TotalPrice', 'Loan Date','DueDate'],
+            colModel: [
+               { name: 'actions', index: 'actions', align: 'left', sortable: false,width:200},
+               { name: 'User', index: 'user', align: 'center' },
+               { name: 'Supervisor', index: 'user', align: 'center' },
+               { name: 'Account', index: 'account', align: 'center'},
+               { name: 'Description', index: 'description', align: 'center', width: 500 },
+               { name: 'loanDestination', index: 'loanDestination', align: 'center' },
+               { name: 'loanContact', index: 'loanContact', align: 'center' },
+               { name: 'Quantity', index: 'quantity', align: 'center' },
+               { name: 'UnitPrice', index: 'unitPrice', align: 'center' },
+               { name: 'TotalPrice', index: 'totalPrice', align: 'center' },
+               { name: 'PurchaseDate', index: 'purchaseDate', align: 'center' },
+               { name: 'loanDueDate', index: 'loanDueDate', align: 'center'}],
+            pager: jQuery('#pager'),
+            rowNum: 11,
+            sortname: 'purchaseDate',
+            sortorder: "desc",
+            viewrecords: true,
+            autowidth: true,
+            height: "320",
+            imgpath: '/store/Content/jqGridCss/themes/steel/images',
+            caption: 'Loans'
+        });
+
+        $("#loanReturnDiv").dialog({
+            // bgiframe: true,
+            autoOpen: false,
+            //height: 500,
+            modal: true,
+            buttons: {
+                'Return': function () {
+                    $(this).dialog('close');
+                    
+                    sendReturnLoan();
+                },
+                Cancel: function () {
+                    $(this).dialog('close');
+                }
+            },
+            close: function () {
+            }
+
+        }); // end dialog definition
+
+        // Tab/enter key override for the dialog ( submits the dialog)
+        $('#loanReturnDiv').keyup(function (e) {
+            if (e.keyCode == 13 || e.keyCode == 9) {
+                sendReturnLoan();
+            }
+        });
+        // Create a clear button function
+        $("#ClearButton").bind('click', function (e) {
+            $("#searchString").val("");
+            $("#startDate").val("");
+            $("#endDate").val("");
+        });
+
+
+    });
+
+
+    function sendReturnLoan() {
+        // Set the val back in the window
+        var itemID = $("#dialogItemID").val();
+        var newQuantity = $("#dialogChangeQuantity").val();
+
+        // push the value to the server (AJAX) 
+        var url = '/store/Loans/returnLoanChange/';
+        $.postGo(url + itemID, { quantity: newQuantity });
+        //$("#loanGrid").trigger("reloadGrid") 
+    }
+    function returnItem(id,quantity) {
+        $("#dialogChangeQuantity").val(quantity);
+        $("#dialogItemID").val(id);
+        $('#loanReturnDiv').dialog('open');
+        $('#loanReturnDiv').position({ my: "center", at: "center", of: window });
+        $("#dialogChangeQuantity").select().focus();
+    }
+    function deleteLoan(id){
+        var url = '/store/Loans/delete/';
+        $.postGo(url + id, {});
+    }
+
+
+    $(window).resize(resize_the_grid);
+    function backToStore() {
+        $.getGo('/store/stores/details/2', {});
+    }
+      
+       
+       
+       
+
+       //onclick = "clearValues()"
+
+    </script>
+ 
+<title>
+	
+    Science and Engineering Stores: List Loans
+
+</title></head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <!-- 
+                <h1>Science and Engineering Stores</h1>
+                -->
+            </div>
+              
+            <div id="logindisplay">
+                
+        Welcome <b>Mel Schlein </b>!
+        
+        [ <a href="/store/adAuthentication/LogOff">Log Off</a> ]
+        <a href="/store/stores/details/2">Back to Store</a>
+        Roles :[
+        BiologyStore 
+         ]
+ 
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                 <!--   <li><a href="/store/">Home</a></li> -->
+                    <!--<li><a href="/store/Home/About">About</a></li> -->
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            
+
+       
+       <h2 class="ui-widget-header ui-corner-top ui-helper-clearfix">
+             <a href="/store/Stores/details/2" style="float:left; text-decoration:none">CSE Store</a>
+             <span class="ui-icon ui-icon-circle-triangle-e" style="margin: 4px; float: left" ></span>
+             All Loans
+     </h2>
+    <form action="/store/loans/list/2" method="post">
+    <fieldset>
+        <input id="storeID" name="storeID" type="hidden" value="2" />
+        <input id="searchStoreID" name="searchStoreID" type="hidden" value="2" />
+        <table>
+            <tr>
+            <td rowspan="4" >
+            Search Loans<br />
+            <ul>
+                <li>Account Number</li>
+                <li>User name</li>
+                <li>Item description</li>
+                <li>Start date</li>
+                <li>End date</li>
+            </ul>
+            </td> 
+                <td>
+                    Start Date
+                </td>
+                <td>
+                    <input type="text" id="startDate" name="startDate" style="width: 75px;" /><script type="text/javascript">$(document).ready(function() { $('#startDate').datepicker({ dateFormat: 'dd/mm/yy' ,changeMonth: true, changeYear: true  , showOn: 'button', buttonImage: '/store/Content/images/calendar.gif', duration: 0 }); });</script>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    End date
+                </td>
+                <td>
+                    <input type="text" id="endDate" name="endDate" style="width: 75px;" /><script type="text/javascript">$(document).ready(function() { $('#endDate').datepicker({ dateFormat: 'dd/mm/yy' ,changeMonth: true, changeYear: true  , showOn: 'button', buttonImage: '/store/Content/images/calendar.gif', duration: 0 }); });</script>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Text
+                </td>
+                <td>
+                    <input id="searchString" name="searchString" type="text" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="buttons">
+                       <button style="" type="submit" id="SearchButton" title="Search on the parameters given" class="positive" onclick=""  ><span class="ui-icon ui-icon-search" style="float: left; margin-right: .3em;"> </span>Search</button>
+                       <button style="" type="submit" id="ClearButton" title="Clear search parameters" class="negative" onclick=""  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Clear</button>
+                </td>
+            </tr>
+            <tr>
+            <td>
+            </td>
+            <td><input id="showDisabled" name="showDisabled" onclick="submit()" type="checkbox" value="true" /><input name="showDisabled" type="hidden" value="false" />Show Returned
+            </td>
+            </tr>
+        </table>
+    </fieldset>
+    </form>
+      <p class="buttons">
+        <button id="Back to StoreButton" title="Back to Store" class="" onclick="backToStore();return false;"  ><span class="ui-icon ui-icon-circle-triangle-w" style="float: left; margin-right: .3em;"> </span>Back to Store</button>&nbsp;
+    </p>
+
+<table  id="loanGrid" class="scroll" cellpadding="0" cellspacing="0"></table>
+
+<div  id="pager" class="scroll" style="text-align:center;"></div>
+ <p class="buttons">
+        <button id="Back to StoreButton" title="Back to Store" class="" onclick="backToStore();return false;"  ><span class="ui-icon ui-icon-circle-triangle-w" style="float: left; margin-right: .3em;"> </span>Back to Store</button>&nbsp;
+    </p>
+<div id="loanReturnDiv" title="Return Loan">
+        <p>
+            Update the details of the loan
+         </p>
+        <fieldset>
+            <label for="changeQuantity">
+                 Quantity
+            </label>
+            <input type="text" name="dialogChangeQuantity" id="dialogChangeQuantity" />
+            <input type="hidden" name="dialogItemID" id="dialogItemID" value="" />
+        </fieldset>
+ </div>
+
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

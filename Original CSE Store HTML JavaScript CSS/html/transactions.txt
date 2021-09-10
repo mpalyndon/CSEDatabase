@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+    
+    <link href="/store/Content/ui.all.css"            rel="stylesheet" type="text/css" />
+    <link href="/store/Content/Site.css"              rel="stylesheet" type="text/css" />
+    <link href="/store/Content/jqGridCss/ui.jqgrid.css"      rel="stylesheet" type="text/css" />
+    <link href="/store/Content/StoresButtons.css"            rel="stylesheet" type="text/css" />
+   <link href="/store/Content/jqGridCss/themes/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" title="redmond" media="screen" /> 
+    
+
+    <script type="text/javascript" src="/store/Scripts/jquery-1.8.1.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery-ui-1.8.23.min.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.extensions.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/styleMod.js"></script>
+    <script type="text/javascript" src="/store/Scripts/grid.locale-en.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.fluid.js"></script>
+
+
+    
+    <!-- //Actions  User  Account  Description  Quantity  Unit Price  Total Price  StockOnHandAfter  Purchase Date -->
+
+    <script type="text/javascript">
+
+        function resize_the_grid() {
+            $('#transactionGrid').fluidGrid({ offset: -80 });
+        }
+
+        jQuery(document).ready(function () {
+            // wire up your grid
+            jQuery("#transactionGrid").jqGrid({
+                url: '/store/transactions/listJSON/2',
+            datatype: 'json',
+            mtype: 'GET',
+            colNames: ['Actions', 'User', 'Account', 'Description', 'Quantity', 'UnitPrice', 'TotalPrice', 'StockOnHandAfter', 'PurchaseDate', 'Operator'],
+            colModel: [
+            { name: 'actions', index: 'actions', align: 'left', sortable: false, width: 200 },
+            { name: 'User', index: 'user', align: 'center', width: 250 },
+            { name: 'Account', index: 'account', align: 'center', width: 300 },
+            { name: 'Description', index: 'description', align: 'center', width: 500 },
+            { name: 'Quantity', index: 'quantity', align: 'center' },
+            { name: 'UnitPrice', index: 'unitPrice', align: 'center' },
+            { name: 'TotalPrice', index: 'totalPrice', align: 'center' },
+            { name: 'StockOnHandAfter', index: 'stockOnHandAfter', align: 'center' },
+            { name: 'PurchaseDate', index: 'purchaseDate', align: 'center' },
+            { name: 'Operator', index: 'operatorName', align: 'center' }],
+            pager: jQuery('#pager'),
+            rowNum: 11,
+            sortname: 'purchaseDate',
+            sortorder: "desc",
+            viewrecords: true,
+            autowidth: true,
+            height: "320",
+            imgpath: '/store/Content/jqGridCss/themes/steel/images',
+               caption: 'Transactions'
+        });
+
+    });
+       $(window).resize(resize_the_grid);
+
+       function clearValues() {
+           $("#searchString").val("");
+           $("#startDate").val("");
+           $("#endDate").val("");
+           $("#projectid").val('-1');
+       }
+       function backToStore() {
+           $.getGo('/store/stores/details/2', {});
+    }
+
+
+    </script>
+<title>
+	
+    Science and Engineering Stores:  View Transactions
+
+</title></head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <!-- 
+                <h1>Science and Engineering Stores</h1>
+                -->
+            </div>
+              
+            <div id="logindisplay">
+                
+        Welcome <b>Mel Schlein </b>!
+        
+        [ <a href="/store/adAuthentication/LogOff">Log Off</a> ]
+        <a href="/store/stores/details/2">Back to Store</a>
+        Roles :[
+        BiologyStore 
+         ]
+ 
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                 <!--   <li><a href="/store/">Home</a></li> -->
+                    <!--<li><a href="/store/Home/About">About</a></li> -->
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            
+
+
+
+    <h2 class="ui-widget-header ui-corner-top ui-helper-clearfix">
+        <a href="/store/Stores/details/2" style="float:left; text-decoration:none">CSE Store</a>
+        <span class="ui-icon ui-icon-circle-triangle-e" style="margin: 4px; float: left"></span>
+        Transactions
+    </h2>
+
+    <form action="/store/transactions/list/2" method="post">
+    <fieldset>
+        <input id="storeID" name="storeID" type="hidden" value="2" />
+        <table>
+            <tr>
+                <td rowspan="4">Search transactions<br />
+                    <ul>
+                        <li>Account Number</li>
+                        <li>User name</li>
+                        <li>Item description</li>
+                        <li>Start date</li>
+                        <li>End date</li>
+                    </ul>
+                </td>
+
+                <td>Start Date
+                </td>
+                <td>
+                    <input type="text" id="startDate" name="startDate" style="width: 75px;" /><script type="text/javascript">$(document).ready(function() { $('#startDate').datepicker({ dateFormat: 'dd/mm/yy' ,changeMonth: true, changeYear: true  , showOn: 'button', buttonImage: '/store/Content/images/calendar.gif', duration: 0 }); });</script>
+                </td>
+            </tr>
+            <tr>
+                <td>End date
+                </td>
+                <td>
+                    <input type="text" id="endDate" name="endDate" style="width: 75px;" /><script type="text/javascript">$(document).ready(function() { $('#endDate').datepicker({ dateFormat: 'dd/mm/yy' ,changeMonth: true, changeYear: true  , showOn: 'button', buttonImage: '/store/Content/images/calendar.gif', duration: 0 }); });</script>
+                </td>
+            </tr>
+            <tr>
+                <td>Text
+                </td>
+                <td>
+                    <input id="searchString" name="searchString" type="text" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="buttons">
+
+                    <button style="" type="submit" id="SearchButton" title="Search on the parameters given" class="positive" onclick=""  ><span class="ui-icon ui-icon-check" style="float: left; margin-right: .3em;"> </span>Search</button>
+                    <button style="" type="submit" id="ClearButton" title="Search on the parameters given" class="negative" onclick="clearValues()"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Clear</button>
+                    
+                
+                </td>
+                <td><input id="showAuditTrail" name="showAuditTrail" onclick="submit()" type="checkbox" value="true" /><input name="showAuditTrail" type="hidden" value="false" />Show Stock Alterations
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    </form>
+
+
+    <p class="buttons">
+        <button id="Back to StoreButton" title="Back to Store" class="" onclick="backToStore();return false;"  ><span class="ui-icon ui-icon-circle-triangle-w" style="float: left; margin-right: .3em;"> </span>Back to Store</button>&nbsp;
+    </p>
+
+    <table id="transactionGrid" class="scroll" cellpadding="0" cellspacing="0"></table>
+
+    <div id="pager" class="scroll" style="text-align: center;"></div>
+    <p class="buttons">
+        <button id="Back to StoreButton" title="Back to Store" class="" onclick="backToStore();return false;"  ><span class="ui-icon ui-icon-circle-triangle-w" style="float: left; margin-right: .3em;"> </span>Back to Store</button>&nbsp;
+     
+    </p>
+
+
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

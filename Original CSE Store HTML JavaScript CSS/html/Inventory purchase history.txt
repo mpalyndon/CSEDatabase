@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+    
+    <link href="/store/Content/ui.all.css"            rel="stylesheet" type="text/css" />
+    <link href="/store/Content/Site.css"              rel="stylesheet" type="text/css" />
+    <link href="/store/Content/jqGridCss/ui.jqgrid.css"      rel="stylesheet" type="text/css" />
+    <link href="/store/Content/StoresButtons.css"            rel="stylesheet" type="text/css" />
+   <link href="/store/Content/jqGridCss/themes/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" title="redmond" media="screen" /> 
+    
+
+    <script type="text/javascript" src="/store/Scripts/jquery-1.8.1.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery-ui-1.8.23.min.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.extensions.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/styleMod.js"></script>
+    <script type="text/javascript" src="/store/Scripts/grid.locale-en.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.fluid.js"></script>
+
+
+    
+<title>
+	
+   Science and Engineering Stores:  Inventory purchase history
+
+</title></head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <!-- 
+                <h1>Science and Engineering Stores</h1>
+                -->
+            </div>
+              
+            <div id="logindisplay">
+                
+        Welcome <b>Mel Schlein </b>!
+        
+        [ <a href="/store/adAuthentication/LogOff">Log Off</a> ]
+        <a href="/store/stores/details/2">Back to Store</a>
+        Roles :[
+        BiologyStore 
+         ]
+ 
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                 <!--   <li><a href="/store/">Home</a></li> -->
+                    <!--<li><a href="/store/Home/About">About</a></li> -->
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            
+
+    <script type="text/javascript">
+        function clearValues() {
+            $("#startDate").val("");
+            $("#endDate").val("");
+            $("#searchString").val("");
+        }
+    </script>
+ <h2 class="ui-widget-header ui-corner-top ui-helper-clearfix">
+           <a href="/store/Stores/details/2" style="float:left; text-decoration:none">CSE Store</a>
+             <span class="ui-icon ui-icon-circle-triangle-e" style="margin: 4px; float: left" ></span>
+             Inventory Purchase History Reports
+     </h2>
+    <form action="/store/reports/inventoryPurchaseHistoryreport/2" method="post">
+    <fieldset>
+        <input id="storeID" name="storeID" type="hidden" value="2" />
+        <p>
+            Select the start and end date 
+        </p>
+        <table>
+            <tr>
+                <td>
+                    Start Date
+                </td>
+                <td>
+                    <input type="text" id="startDate" name="startDate" style="width: 75px;" /><script type="text/javascript">$(document).ready(function() { $('#startDate').datepicker({ dateFormat: 'dd/mm/yy' ,changeMonth: true, changeYear: true  , showOn: 'button', buttonImage: '../../Content/images/calendar.gif', duration: 0 }); });</script>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    End date
+                </td>
+                <td>
+                    <input type="text" id="endDate" name="endDate" style="width: 75px;" /><script type="text/javascript">$(document).ready(function() { $('#endDate').datepicker({ dateFormat: 'dd/mm/yy' ,changeMonth: true, changeYear: true  , showOn: 'button', buttonImage: '../../Content/images/calendar.gif', duration: 0 }); });</script>
+                </td>
+            </tr>
+                        <tr>
+                <td>
+                   <div class="editor-label">
+                   <label for="searchString">searchString</label>
+                   </div>
+                </td>
+                <td>
+                    <input id="searchString" name="searchString" type="text" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="buttons">
+                    <button style="" type="submit" id="SearchButton" title="Search on the parameters given" class="positive" onclick=""  ><span class="ui-icon ui-icon-search" style="float: left; margin-right: .3em;"> </span>Search</button>
+                    <button id="ClearButton" title="Clear search parameters" class="negative" onclick="clearValues(); return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Clear</button>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    </form>
+    
+    <div class="buttons">
+        <a href="/store/Stores/details/2">Back to Store</a>
+    </div>
+
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+    
+    <link href="/store/Content/ui.all.css"            rel="stylesheet" type="text/css" />
+    <link href="/store/Content/Site.css"              rel="stylesheet" type="text/css" />
+    <link href="/store/Content/jqGridCss/ui.jqgrid.css"      rel="stylesheet" type="text/css" />
+    <link href="/store/Content/StoresButtons.css"            rel="stylesheet" type="text/css" />
+   <link href="/store/Content/jqGridCss/themes/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" title="redmond" media="screen" /> 
+    
+
+    <script type="text/javascript" src="/store/Scripts/jquery-1.8.1.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery-ui-1.8.23.min.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.extensions.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/styleMod.js"></script>
+    <script type="text/javascript" src="/store/Scripts/grid.locale-en.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.fluid.js"></script>
+
+
+    
+<script type="text/javascript">
+    function backToStore() {
+        $.getGo('/store/stores/details/2', {});
+    }
+    function Create() {
+        $.getGo('/store/Catagorys/Create/2', {});
+
+    }
+    function Edit(id) {
+        $.getGo('/store/Catagorys/edit/' + id, {});
+
+    }
+    function Delete(id) {
+        $.postGo('/store/Catagorys/delete/' + id, {});
+
+    }
+    function Disable(id) {
+        $.postGo('/store/Catagorys/disable/' + id, {});
+    }
+    function Enable(id) {
+        $.postGo('/store/Catagorys/enable/' + id, {});
+    }
+
+</script>
+<style type="text/css">
+  .disabledRed
+  {
+      color:Red;
+  }
+</style>
+<title>
+	
+	Science and Engineering Stores: Catagories
+
+</title></head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <!-- 
+                <h1>Science and Engineering Stores</h1>
+                -->
+            </div>
+              
+            <div id="logindisplay">
+                
+        Welcome <b>Mel Schlein </b>!
+        
+        [ <a href="/store/adAuthentication/LogOff">Log Off</a> ]
+        <a href="/store/stores/details/2">Back to Store</a>
+        Roles :[
+        BiologyStore 
+         ]
+ 
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                 <!--   <li><a href="/store/">Home</a></li> -->
+                    <!--<li><a href="/store/Home/About">About</a></li> -->
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            
+
+    <h2 class="ui-widget-header ui-corner-top ui-helper-clearfix">
+   <a href="/store/stores/Details/2" style="float:left; text-decoration:none">Store</a>
+    <span class="ui-icon ui-icon-circle-triangle-e" style="margin: 4px; float: left"></span>
+    Item Categories
+    </h2>
+     <p class="buttons">
+   
+         <button id="Add new categoryButton" title="Add new category" class="positive" onclick="Create();return false;"  ><span class="ui-icon ui-icon-circle-plus" style="float: left; margin-right: .3em;"> </span>Add new category</button>&nbsp;
+      </p>
+    
+     <p class="buttons">
+        &nbsp;
+    </p>
+
+    <table>
+        <tr>
+            <th>Actions</th>
+           <th>
+                Catagory
+            </th>
+            <th>
+                Status
+            </th>
+        </tr>
+     
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(11);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(11);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(11);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Laboratory - Containers
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(12);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(12);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(12);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Laboratory - General
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(13);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(13);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(13);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Chemicals - General
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(14);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(14);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(14);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Chemicals - Corrosive
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(15);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(15);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(15);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Chemicals - Solvents
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(16);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(16);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(16);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Tapes and Ties
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(17);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(17);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(17);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Computer Consumables
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(18);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(18);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(18);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Hardware - Containers
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(19);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(19);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(19);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Hardware - General
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(20);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(20);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(20);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Safety/Protection
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(21);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(21);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(21);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Stationery
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(22);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(22);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="EnableButton" title="Enable" class="positive" onclick="Enable(22);return false;"  ><span class="ui-icon ui-icon-check" style="float: left; margin-right: .3em;"> </span>Enable</button>&nbsp;
+                      
+                
+            </td>
+            <td>
+                School Office 
+            </td>
+               <td >
+                <div class="disabledRed">Disabled</div>
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(23);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(23);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(23);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Special Purchases
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(24);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(24);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(24);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Paper and Toners
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(38);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(38);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(38);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Promega
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(39);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(39);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(39);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Diaries
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(54);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(54);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="EnableButton" title="Enable" class="positive" onclick="Enable(54);return false;"  ><span class="ui-icon ui-icon-check" style="float: left; margin-right: .3em;"> </span>Enable</button>&nbsp;
+                      
+                
+            </td>
+            <td>
+                LABWARE
+            </td>
+               <td >
+                <div class="disabledRed">Disabled</div>
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(55);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(55);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="EnableButton" title="Enable" class="positive" onclick="Enable(55);return false;"  ><span class="ui-icon ui-icon-check" style="float: left; margin-right: .3em;"> </span>Enable</button>&nbsp;
+                      
+                
+            </td>
+            <td>
+                PPE
+            </td>
+               <td >
+                <div class="disabledRed">Disabled</div>
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(57);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(57);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="EnableButton" title="Enable" class="positive" onclick="Enable(57);return false;"  ><span class="ui-icon ui-icon-check" style="float: left; margin-right: .3em;"> </span>Enable</button>&nbsp;
+                      
+                
+            </td>
+            <td>
+                MACHINE SUPPLIES
+            </td>
+               <td >
+                <div class="disabledRed">Disabled</div>
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(58);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(58);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="EnableButton" title="Enable" class="positive" onclick="Enable(58);return false;"  ><span class="ui-icon ui-icon-check" style="float: left; margin-right: .3em;"> </span>Enable</button>&nbsp;
+                      
+                
+            </td>
+            <td>
+                GLASSWARE
+            </td>
+               <td >
+                <div class="disabledRed">Disabled</div>
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(59);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(59);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="EnableButton" title="Enable" class="positive" onclick="Enable(59);return false;"  ><span class="ui-icon ui-icon-check" style="float: left; margin-right: .3em;"> </span>Enable</button>&nbsp;
+                      
+                
+            </td>
+            <td>
+                PLASTICWARE
+            </td>
+               <td >
+                <div class="disabledRed">Disabled</div>
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(60);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(60);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="EnableButton" title="Enable" class="positive" onclick="Enable(60);return false;"  ><span class="ui-icon ui-icon-check" style="float: left; margin-right: .3em;"> </span>Enable</button>&nbsp;
+                      
+                
+            </td>
+            <td>
+                Field First Aid Kits
+            </td>
+               <td >
+                <div class="disabledRed">Disabled</div>
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(61);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(61);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(61);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Batteries
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(62);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(62);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(62);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Cleaning &amp; Tidying
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(63);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(63);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(63);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Tubing
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(64);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(64);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(64);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                Labels
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(65);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(65);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(65);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                CSE Car Rental Charges
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(66);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(66);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(66);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                CSE CAS Charges
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="buttons">
+                <button id="EditButton" title="Edit" class="positive" onclick="Edit(67);return false;"  ><span class="ui-icon " style="float: left; margin-right: .3em;"> </span>Edit</button>&nbsp;
+                <button id="DeleteButton" title="Delete" class="negative" onclick="Delete(67);return false;"  ><span class="ui-icon ui-icon-trash" style="float: left; margin-right: .3em;"> </span>Delete</button>&nbsp;
+                <button id="DisableButton" title="Disable" class="negative" onclick="Disable(67);return false;"  ><span class="ui-icon ui-icon-close" style="float: left; margin-right: .3em;"> </span>Disable</button>&nbsp;
+                   
+                
+            </td>
+            <td>
+                CSE Boat Rental Charges
+            </td>
+               <td >
+                Enabled
+            </td>
+        </tr>
+    
+    </table>
+    <p class="buttons">
+        <button id="Add new categoryButton" title="Add new category" class="positive" onclick="Create();return false;"  ><span class="ui-icon ui-icon-circle-plus" style="float: left; margin-right: .3em;"> </span>Add new category</button>&nbsp;
+    </p>
+    <p class="buttons">
+        <button id="Back to StoreButton" title="Back to Store" class="" onclick="backToStore();return false;"  ><span class="ui-icon ui-icon-circle-triangle-w" style="float: left; margin-right: .3em;"> </span>Back to Store</button>&nbsp;
+    </p>
+
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

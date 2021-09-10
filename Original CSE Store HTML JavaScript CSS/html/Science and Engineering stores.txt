@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+    
+    <link href="/store/Content/ui.all.css"            rel="stylesheet" type="text/css" />
+    <link href="/store/Content/Site.css"              rel="stylesheet" type="text/css" />
+    <link href="/store/Content/jqGridCss/ui.jqgrid.css"      rel="stylesheet" type="text/css" />
+    <link href="/store/Content/StoresButtons.css"            rel="stylesheet" type="text/css" />
+   <link href="/store/Content/jqGridCss/themes/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" type="text/css" title="redmond" media="screen" /> 
+    
+
+    <script type="text/javascript" src="/store/Scripts/jquery-1.8.1.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery-ui-1.8.23.min.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.extensions.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/styleMod.js"></script>
+    <script type="text/javascript" src="/store/Scripts/grid.locale-en.js"></script> 
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="/store/Scripts/jquery.jqGrid.fluid.js"></script>
+
+
+    <title>
+	
+    Science and Engineering Stores
+
+</title></head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <!-- 
+                <h1>Science and Engineering Stores</h1>
+                -->
+            </div>
+              
+            <div id="logindisplay">
+                
+        Welcome <b>Mel Schlein </b>!
+        
+        [ <a href="/store/adAuthentication/LogOff">Log Off</a> ]
+        <a href="/store/stores/details/2">Back to Store</a>
+        Roles :[
+        BiologyStore 
+         ]
+ 
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                 <!--   <li><a href="/store/">Home</a></li> -->
+                    <!--<li><a href="/store/Home/About">About</a></li> -->
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            
+    <h2 class="ui-widget-header ui-corner-top ui-helper-clearfix">
+        Science and Engineering Stores
+    </h2>
+     43VZV23 10.24.145.26
+    <table>
+        <tr>
+            <th colspan="2" align="center">
+                
+                    Actions
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Contact
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                location
+            </th>
+        </tr>
+       
+        
+        <tr>
+            <td class="buttons">
+                <a Class="flow" disabled="disabled" href="/store/">Manage</a>
+            </td>
+            <td class="buttons">
+                
+            </td>
+            <td>
+                CAPS Store
+            </td>
+            <td>
+                Brenton Jansen
+            </td>
+            <td>
+                13993
+            </td>
+            <td>
+                Physical Sciences 3211A
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="buttons">
+                <a Class="flow" href="/store/Stores/Details/2">Manage</a>
+            </td>
+            <td class="buttons">
+                
+            </td>
+            <td>
+                CSE Store
+            </td>
+            <td>
+                CSE Store
+            </td>
+            <td>
+                
+            </td>
+            <td>
+                CAPS 3211
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="buttons">
+                <a Class="flow" disabled="disabled" href="/store/">Manage</a>
+            </td>
+            <td class="buttons">
+                
+            </td>
+            <td>
+                Electronics
+            </td>
+            <td>
+                Bill Drury
+            </td>
+            <td>
+                12289
+            </td>
+            <td>
+                Physical Science 3111
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="buttons">
+                <a Class="flow" disabled="disabled" href="/store/">Manage</a>
+            </td>
+            <td class="buttons">
+                
+            </td>
+            <td>
+                Test Store
+            </td>
+            <td>
+                Jeff Kirby
+            </td>
+            <td>
+                12608
+            </td>
+            <td>
+                Home
+            </td>
+        </tr>
+        
+    </table>
+
+
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
