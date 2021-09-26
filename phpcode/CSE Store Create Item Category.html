@@ -1,38 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="author" content="" /><Ben McIntyre>
-    <meta name="description" content="CSE Second page" />
-    <title>CSE Store Second Page</title>
-    <link rel="stylesheet" href="Styles/style.css">
-  </head>
-  <body>
-    <style>
-        body {
-          background-image: url('images/CSEStoreLogo.jpg');
-          background-repeat: no-repeat;
-          background-size: 700px;
-        }
-        </style>
-        
-    <div class="ContentArea">
-      
-        <h1><b>Create Item Category</b></h1>
-     
-          <form action="quiz.html" method="GET">
+<?php require_once "components/layout_top.php"; ?>
 
-        <h2>
-            <input placeholder="Description:">
-            <br>
-            <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-            <input type="submit" value="Create" required>
-            <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-            <input type="submit" value="Cancel" required>
-          </h2>  
-            </div>
-        
-      </form>
-    </div>
-  </body>
-</html>
+<div>
+    <h1 class="subheader">CSE | Create Item Category</h1>
+
+    <h2>
+        <input placeholder="Description:">
+        <br>
+        <br>
+        <input type="button" value="Create" class= "primary-button" style ="margin: 0 10px;" >
+        <input type="button" value="Cancel" onclick="cancel()" class="primary-button" style="margin: 0 10px;">
+
+        </h2>  
+        </div>
+<?php require_once "components/layout_bottom.php"; ?>
