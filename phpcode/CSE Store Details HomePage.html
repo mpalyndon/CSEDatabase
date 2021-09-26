@@ -1,123 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="author" content="" /><Ben McIntyre>
-    <meta name="description" content="CSE Front page" />
-    <title>CSE Store Front Page</title>
-    <link rel="stylesheet" href="Styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
+<?php require_once "components/layout_top.php"; ?>
+
+
+
+</head>
   <body>
-    <style>
-        body {
-          background-image: url('images/CSEStoreLogo.jpg');
-          background-repeat: no-repeat;
-          background-size: 700px;
-        }
-        </style>
         
     <div class="ContentArea">
       
-        <h1><b>Stores | CSE Store Details</b></h1>
-     
-          <form action="quiz.html" method="GET">
+    <h1 class="subheader">Home</h1>
+
 
         <h2>
              
             <p>Primary contact:</p>
-            <br>
             <p>Contact Phone number:</p>
-            <br>
             <p>Location:</p>
-            <br>
-            <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-            <br>
-            <input type="submit" value="Edit store details" required>
-
-          </h2>  
-
+            <a class="primary-button" href="/projects.php">Edit store details</a> <!-- FUTURE NOTE link to correct page -->
 
     <h3>
-    <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
     <br>
-    <i class="fa fa-shopping-cart"></i><input type="submit" value="Start Shopping" required><label>- Administrative updates/repurchases</label>
-    <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-    <br>
-    <i class="fa fa-shopping-cart"></i><input type="submit" value="Start Shopping" required><label>- Shopping from a user's card via scaner</label>
+   
 
+    <a class="primary-button" href="/projects.php">Start Shopping</a><label> Administrative updates/repurchases</label>
+   <br>
+   <br>
+   <br>
+    <a class="primary-button" href="/projects.php">Start Shopping</a><label> Shopping from a user's perspective</label>
+     
     </h3>  
-
-    <h1><b>Accounting</b></h1>
+<br>
+    <h1 class="subheader">Accounting</h1>
     
     <h3>
-      <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-      <br>
-      <input type="submit" value="Manage Projects" required>
-      <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-      <br>
-      <input type="submit" value="Manage Accounts" required>
-      <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-      <br>
-      <input type="submit" value="Manage Users" required>
-      <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-      </h3>  
-
-      <h1><b>Inventory</b></h1>
-
-      <h3>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-        <br>
-        <input type="submit" value="Manage Items" required>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-        <br>
-        <input type="submit" value="Manage Suppliers" required>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-        <br>
-        <input type="submit" value="Manage Categories" required>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-        <br>
-        <input type="submit" value="Manage Units" required>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-        <br>
-        <input type="submit" value="View Transactions" required>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-        </h3>  
-
-        <h1><b>Reporting</b></h1>
-
       
-      <h3>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
+      <br>
+      <a class="primary-button" href="/projects.php">Manage Projects</a>
+      <a class="primary-button" href="/projects.php">Manage Accounts</a>
+      <a class="primary-button" href="/projects.php">Manage Users</a>
+      </h3> 
+ 
         <br>
-        <input type="submit" value="Charging Journal Report (to Excel)" required>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
+      <h1 class="subheader">Inventory</h1>
+
         <br>
-        <input type="submit" value="Charging Summary Report (to Excel)" required>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
+        <a class="primary-button" href="/projects.php">Manage Items</a>
+        <a class="primary-button" href="/projects.php">Manage Suppliers</a>
+        <a class="primary-button" href="/categories.php">Manage Categories</a>    
+        <a class="primary-button" href="/projects.php">Manage Units</a>
+        <a class="primary-button" href="/projects.php">View Transactions</a>  
+        <br>        
         <br>
-        <input type="submit" value="Stock on Hand for Stocktake" required>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
+        <h1 class="subheader">Reporting</h1>
+        <h3>
         <br>
-        <input type="submit" value="Inventory Purchase History" required>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
+        <a class="primary-button" href="/projects.php">Changing Journal Report (to Excel)</a>
         <br>
-        <input type="submit" value="User Change reminders" required>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-        <input type="submit" value="Items below low stock Level" required>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-        <input type="submit" value="User/Account transactions" required>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-        <input type="submit" value="Users in projects" required>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-        <input type="submit" value="User List" required>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-        <input type="submit" value="Account List" required>
-        <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
+        <br>
+        <br>
+        <a class="primary-button" href="/projects.php">Changing Summary Report (to Excel)</a>
+        <br>
+        <br>
+        <br>
+        <a class="primary-button" href="/projects.php">Stock on Hand for Stocktake</a>
+        <br>
+        <br>
+        <br>
+        <a class="primary-button" href="/projects.php">Inventory Purchase History</a>
+        <br>
+        <br>
+        <br>
+        <a class="primary-button" href="/projects.php">User Change reminders</a>
+        <br>
+        <br>
+        <br>
+        <a class="primary-button" href="/projects.php">Items below low stock level</a>
+        <br>
+        <br>
+        <br>
+        <a class="primary-button" href="/projects.php">User/Account Transactions</a>
+        <br>
+        <br>
+        <br>
+        <a class="primary-button" href="/projects.php">Users in projects</a>
+        <br>
+        <br>
+        <br>
+        <a class="primary-button" href="/projects.php">User List</a>
+        <br>
+        <br>
+        <br>
+        <a class="primary-button" href="/projects.php">Account List</a>
+        <br>
+        <br>
         </h3>  
+</h2>
             </div>
         
       </form>
     </div>
   </body>
-</html>
+  <?php require_once "components/layout_bottom.php"; ?>
+  </html>
+
