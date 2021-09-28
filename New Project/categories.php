@@ -1,7 +1,7 @@
 <?php require_once "components/layout_top.php"; ?>
 
 <div>
-    <h1 class="subheader">CSE | Create Item Category</h1>
+    <h1 class="subheader">CSE | Manage Item Categories</h1>
 
     <h2>
         <input placeholder="Description:">
