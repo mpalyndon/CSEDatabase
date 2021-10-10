@@ -13,63 +13,100 @@
           background-image: url('images/logoCSE.png');
           background-repeat: no-repeat;
           background-size: 300px;
+          overflow-x: hidden;
         }
         </style>
         
-    <div class="ContentArea">
+    <div class="ContentArea" style="height: auto;">
       
         <h1><b>CSE | Users | Create new User</b></h1>
-     
           <form action="quiz.html" method="GET">
 
-          <!--Placeholder Fields for editing CSE Store Details -->
-        <h2>
-          <label> BarCode</label>
-          <input placeholder>
-          <label> Change Reminder:</label>
-          <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-          <label> at</label>
-          <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
-          <br>
-            <label> First name</label>
-            <input placeholder>
-            <label> Reminder Details</label>
-            <textarea></textarea> 
-            <br>
-            <label> Surname</label>
-            <input placeholder>
-            <br>
-            <label> Preferred Name</label>
-            <input placeholder>
-            <br>
-            <label> FAN</label>
-            <input placeholder>
-            <label> Other notes</label>
-            <textarea></textarea> 
-            <br>
-            <label> Supervision</label>
-            <input placeholder>
-            <br>
-            <label> Lab:</label>
-            <input placeholder>
-            <br>
-            <label> Type of student/staff:</label>
-            <input placeholder>
-            <br>
-            <label> School Area: </label>
-            <input placeholder>
-            <br>
-            <label> Start date:</label>
-            <input type="date" id="datemax" name="datemax" min="1979-12-31"><br><br>
-            <label> Finish date:</label>
-            <input type="date" id="datemin" name="datemin" max="3000-01-02"><br><br>
-            <br>
-            <br>
-            <input type="submit" value="Cancel" required>
-            <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-          </h2>  
+            <div class="grid-form">
+              <div style="width: 4s00px;">
+                <div class="input-row">
+                  <label for="barcode">BarCode:</label>
+                  <input name="barcode" id="barcode">
+                </div>
+                
+                <div class="input-row">
+                  <label for="firstname">First Name:</label>
+                  <input name="firstname" id="firstname">
+                </div>
+    
+                <div class="input-row">
+                  <label for="surname">Surname:</label>
+                  <input name="surname" id="surname">
+                </div>
+    
+    
+                <div class="input-row">
+                  <label for="preferredname">Preferred Name:</label>
+                  <input name="preferredname" id="preferredname">
+                </div>
+    
+                <div class="input-row">
+                  <label for="fan">FAN:</label>
+                  <input name="fan" id="fan">
+                </div>
+    
+                <div class="input-row">
+                  <label for="supervisor">Supervisor:</label>
+                  <input name="supervisor" id="supervisor">
+                </div>
+    
+    
+                <div class="input-row">
+                  <label for="lab">Lab:</label>
+                  <input name="lab" id="lab">
+                </div>
+    
+    
+                <div class="input-row">
+                  <label for="usertype">Type of Student/Staff:</label>
+                  <input name="usertype" id="usertype">
+                </div>
+    
+    
+                <div class="input-row">
+                  <label for="schoolarea">School Area:</label>
+                  <input name="schoolarea" id="schoolarea">
+                </div>
+    
+                <div class="input-row">
+                  <label for="startdate">Start date:</label>
+                  <input type="date" id="startdate" name="startdate" min="1979-12-31">
+                </div>
+
+                <div>
+                  <input type="submit" value="Create User" required>
+                  <input type="submit" value="Cancel" required>
+                </div>
+              </div>
+    
+              <div style="width: 400px; margin-left: 32px;">
+    
+                <div class="input-row">
+                  <label for="reminder"> Change Reminder:</label>
+                  <div style="width: 200px; display: flex; align-items: center;">
+                    <input type="checkbox" id="reminder" name="reminder" style="width: 20px; padding: 0; margin-left: -20px;">
+                    <label for="datemax" style="margin-right: 12px;"> at </label>
+                    <input type="date" id="datemax" name="datemax" max="1979-12-31" style="width: 80px;">
+                  </div>
+                </div>
+    
+                <div class="input-row">
+                  <label for="remindernotes">Reminder Details:</label>
+                  <textarea name="remindernotes" id="remindernotes"></textarea>
+                </div>
+    
+                <div class="input-row">
+                  <label for="othernotes">Other Notes:</label>
+                  <textarea name="othernotes" id="othernotes"></textarea>
+                </div>
+                </div> 
+              </div>
             </div>
-        
       </form>
     </div>
   </body>

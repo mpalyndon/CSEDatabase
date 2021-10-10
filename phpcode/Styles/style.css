@@ -83,7 +83,30 @@ body{
     font-family: montserrat;
 }
 textarea{
-    rows: 4;
     vertical-align: top;
 
+}
+.grid-form {
+    display: flex;
+  }
+  
+.grid-form input {
+  width: 200px;
+  padding: 5px;
+}
+
+.grid-form input[type="radio"] {
+  width: 10px;
+}
+
+.grid-form textarea {
+  width: 200px;
+  height: 100px;
+  padding: 5px;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
 }

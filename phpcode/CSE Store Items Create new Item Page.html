@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="" /><Ben McIntyre>
+    <meta name="description" content="CSE Second page" />
+    <title>CSE Store Second Page</title>
+    <link rel="stylesheet" href="Styles/style.css">
+  </head>
+  <body>
+    <style>
+        body {
+          background-image: url('images/logoCSE.png');
+          background-repeat: no-repeat;
+          background-size: 300px;
+        }
+        </style>
+        
+    <div class="ContentArea">
+      
+        <h1><b>Create new Item</b></h1>
+     
+          <form action="quiz.html" method="GET">
+
+          <!--Placeholder Fields for editing CSE Store Details -->
+          <div class="grid-form">
+            <div style="width: 400px;">
+              <div class="input-row">
+                <label for="barcode">Barcode:</label>
+                <input name="barcode" id="barcode">
+              </div>
+              
+              <div class="input-row">
+                <label for="description">Description</label>
+                <input name="description" id="description">
+              </div>
+  
+              <div class="input-row">
+                <label for="category">Category:</label>
+                <input name="category" id="category">
+              </div>
+  
+  
+              <div class="input-row">
+                <label for="units">Units</label>
+                <input name="units" id="units">
+              </div>
+  
+              <div class="input-row">
+                <label for="priceperunit">Price Per Unit in $</label>
+                <input name="priceperunit" id="priceperunit">
+              </div>
+  
+              <div class="input-row">
+                <label for="purchasedate">Purchase Date</label>
+                <input name="purchasedate" id="purchasedate">
+              </div>
+  
+  
+              <div class="input-row">
+                <label for="lowinventoryalert">Low Inventory Alert</label>
+                <input name="lowinventoryalert" id="lowinventoryalert">
+              </div>
+  
+  
+              <div class="input-row">
+
+                <input type="radio" id="html" name="fav_language" value="normal">
+                  <label for="normal">Normal</label>
+                  <input type="radio" id="css" name="fav_language" value="vehiclechharge">
+                  <label for="vehiclechharge">VehicleCharge</label>
+                  <input type="radio" id="javascript" name="fav_language" value="loan">
+                  <label for="loab">Loan</label>
+              </div>
+  
+  
+              <div class="input-row">
+                <label for="stockonhand">Stock on hand</label>
+                <input name="stockonhand" id="stockonhand">
+              </div>
+            </div>
+  
+  
+  
+            <div style="width: 400px; margin-left: 32px;">
+
+              
+              <div class="input-row">
+                <label for="supplier">Supplier</label>
+                <input name="supplier" id="supplier">
+              </div>
+
+              <div class="input-row">
+                <label for="supplierpartnumber">Supplier Part Number:</label>
+                <input name="supplierpartnumber" id="supplierpartnumber">
+              </div>
+
+              <div class="input-row">
+                <label for="supplieroritemnotes">Supplier/Item notes</label>
+                <textarea name="supplieroritemnotes" id="supplieroritemnotes"></textarea>
+              </div>
+
+
+              <div class="input-row">
+                <label for="shelforlocation">Shelf/Location</label>
+                <input name="shelforlocation" id="shelforlocation">
+              </div>
+
+              <div class="input-row">
+                <label for="orderedstock">Stock Ordered</label>
+                <input type="checkbox" id="reminder" name="reminder" style="width: 20px; padding: 0; margin-left: -20px;">
+              </div>
+              </div> 
+            </div>
+          </div>
+    </form>
+  </div>
+</body>
+</html>
