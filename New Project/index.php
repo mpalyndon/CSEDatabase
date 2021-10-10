@@ -15,17 +15,17 @@
             <p>Primary contact:</p>
             <p>Contact Phone number:</p>
             <p>Location:</p>
-            <a class="primary-button" href="/projects.php">Edit store details</a> <!-- FUTURE NOTE link to correct page -->
+            <a class="primary-button" href="/EditStoreDetails.php">Edit store details</a> <!-- FUTURE NOTE link to correct page -->
 
     <h3>
     <br>
    
 
-    <a class="primary-button" href="/projects.php">Start Shopping</a><label> Administrative updates/repurchases</label>
+    <a class="primary-button" href="/StartShopAdmin.php">Start Shopping</a><label> Administrative updates/repurchases</label>
    <br>
    <br>
    <br>
-    <a class="primary-button" href="/projects.php">Start Shopping</a><label> Shopping from a user's perspective</label>
+    <a class="primary-button" href="/StartShopCard.php">Start Shopping</a><label> Shopping from a user's perspective</label>
      
     </h3>  
 <br>
@@ -35,9 +35,10 @@
       
       <br>
       <a class="primary-button" href="/CreateNewProject.php">Create New Project</a>
-      <a class="primary-button" href="/CreateNewProject.php">Manage Accounts</a>
+      <a class="primary-button" href="/ManageAccount.php">Manage Accounts</a>
       <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
-      <a class="primary-button" href="/CreateNewProject.php">Manage Users</a>
+      <a class="primary-button" href="/ManageUsers.php">Manage Users</a>
+      <a class="primary-button" href="/ManageProject.php">Manage Project</a>
       <!--<input type="text" name="name" placeholder="Required" required minlength="2" maxlength="more"> -->
       </h3> 
  
@@ -46,8 +47,8 @@
 
         <br>
         <a class="primary-button" href="/CreateNewProject.php">Manage Items</a>
-        <a class="primary-button" href="/CreateNewProject.php">Manage Suppliers</a>
-        <a class="primary-button" href="/CreateNewProject.php">Manage Categories</a>    
+        <a class="primary-button" href="/ManageSuppliers.php">Manage Suppliers</a>
+        <a class="primary-button" href="/ManageItemCategories.php">Manage Categories</a>    
         <a class="primary-button" href="/CreateNewProject.php">Manage Units</a>
         <a class="primary-button" href="/CreateNewProject.php">View Transactions</a>  
         <br>        
