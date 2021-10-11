@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users</title>
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+<body>
+    <style>
+        body {
+          background-image: url('images/CSEStoreLogo.png');
+          background-repeat: no-repeat;
+          background-size: 300px;
+        }
+        .myTable th { background-color:gold;color:black;}
+        .myTable td, .myTable th { 
+            padding:5px;border:1px solid #000; 
+            }
+</style>
+        </style>
+        
+    <div class="ContentArea">
+      Welcome <i>User</i>
+        <h1 id = "bigger" style="color: black; "><b>CSE Store | Manage Users</b></h1>
+           
+          <form action="quiz.html" method="GET">
+
+        <h2>
+           <table style = "width: 700px; font-size: 15px;">
+               <tr>
+                   <td>Search Users</td>
+                   <td>Stores to Search</td>
+                   <td>
+                       <label for="stores"></label>
+                       <select name="stores" id="stores">
+                           <option value="CSE Store">CSE Store</option>
+                           <option value="S&E">S&E  </option>
+                       </select>
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                   <li>Name</li>
+                   <li>Barcode</li>
+                   <li>Supervisor</li>
+                    </td>
+                    <td>  <input></td>
+                </tr>
+                <tr>
+                    <td>
+                  
+                    </td>
+                    <td>
+                        <input type="submit" value="Search" style="width: auto;">
+                        <input type="submit" value="Clear" style="width: auto;">
+                        <input type="submit" value="Create new user" style="width: auto;">
+                    </td>
+                </tr>
+                   
+               </tr>
+           </table>
+        </h2>
+        <input type="submit" value="Back to Store" id = "button_charging_bts" required>
+        <h2>
+            <table class = "myTable" style = "font-size: 15px;  border: 1px solid black;">
+                <tr>
+                   <h1>Users</h1> 
+                </tr>
+                <tr>
+                    <th>Actions</th>
+                    <th>Firstname</th>
+                    <th>Surname</th>
+                    <th>Barcode</th>
+                    <th>Type</th>
+                    <th>Start date</th>
+                    <th>Finish date</th>
+                    <th>Supervisors</th>
+                    <th>Account Managers</th>
+                    <th>Reminders</th>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Edit" style="width: auto;"></td>
+                    <td>John</td>
+                    <td>Smith</td>
+                    <td>12453635345</td>
+                    <td>Masters</td>
+                    <td>28/05/2015</td>
+                    <td></td>
+                    <td>Maily</td>
+                    <td>Maily</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Edit" style="width: auto;"></td>
+                    <td>Will</td>
+                    <td>Millow</td>
+                    <td>3635345</td>
+                    <td>Bachelors</td>
+                    <td>09/04/2017</td>
+                    <td>10/05/2019</td>
+                    <td>Nick</td>
+                    <td>Malinda</td>
+                    <td></td>
+                </tr>
+            </table>
+        </h2>
+        <input type="submit" value="Back to Store" id = "button_charging_bts" required>
+    </div>
+        
+      </form>
+     
+    </div>
+</body>
+</html>

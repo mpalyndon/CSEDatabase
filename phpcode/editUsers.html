@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Users</title>
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+<body>
+    <style>
+        body {
+          background-image: url('images/logoCSE.png');
+          background-repeat: no-repeat;
+          background-size: 300px;
+          overflow-x: hidden;
+        }
+        </style>
+        
+    <div class="ContentArea" style="height: auto;">
+      
+        <h1><b>CSE | Users | Edit Details</b></h1>
+          <form action="quiz.html" method="GET">
+
+            <div class="grid-form">
+              <div style="width: 4s00px;">
+                                
+                <div class="input-row">
+                  <label for="firstname">First Name:</label>
+                  <input name="firstname" id="firstname">
+                </div>
+    
+                <div class="input-row">
+                  <label for="surname">Surname:</label>
+                  <input name="surname" id="surname">
+                </div>
+    
+    
+                <div class="input-row">
+                  <label for="preferredname">Preferred Name:</label>
+                  <input name="preferredname" id="preferredname">
+                </div>
+    
+                <div class="input-row">
+                  <label for="fan">FAN:</label>
+                  <input name="fan" id="fan">
+                </div>
+                
+                <div class="input-row">
+                    <label for="barcode">BarCode:</label>
+                    <input name="barcode" id="barcode">
+                </div>
+
+                <div class="input-row">
+                  <label for="supervisor">Supervisor:</label>
+                  <input name="supervisor" id="supervisor">
+                </div>
+    
+    
+                <div class="input-row">
+                  <label for="lab">Lab:</label>
+                  <input name="lab" id="lab">
+                </div>
+    
+    
+                <div class="input-row">
+                  <label for="usertype">Type of Student/Staff:</label>
+                  <input name="usertype" id="usertype">
+                </div>
+    
+    
+                <div class="input-row">
+                  <label for="schoolarea">School Area:</label>
+                  <input name="schoolarea" id="schoolarea">
+                </div>
+    
+                <div>
+                  <input type="submit" value="Save" style="width: auto;" required>
+                </div>
+              </div>
+    
+              <div style="width: 400px; margin-left: 32px;">
+                <div class="input-row">
+                    <label for="startdate">Start date:</label>
+                    <input type="date" id="startdate" name="startdate" min="1979-12-31">
+                </div>
+
+                <div class="input-row">
+                    <label for="enddate">End date:</label>
+                    <input type="date" id="enddate" name="enddate" min="2020-12-30">
+                </div>
+
+                <div class="input-row">
+                  <label for="reminder"> Change Reminder:</label>
+                  <div style="width: 200px; display: flex; align-items: center;">
+                    <input type="checkbox" id="reminder" name="reminder" style="width: 20px; padding: 0; margin-left: -20px;">
+                    <label for="datemax" style="margin-right: 12px;"> at </label>
+                    <input type="date" id="datemax" name="datemax" max="1979-12-31" style="width: 80px;">
+                  </div>
+                </div>
+    
+                <div class="input-row">
+                  <label for="remindernotes">Reminder Details:</label>
+                  <textarea name="remindernotes" id="remindernotes"></textarea>
+                </div>
+    
+                <div class="input-row">
+                  <label for="othernotes">Other Notes:</label>
+                  <textarea name="othernotes" id="othernotes"></textarea>
+                </div>
+                </div> 
+              </div>
+              <h1><b>Chargable Accounts</b></h1>
+              <table>
+                  <tr>
+                      <td>Actions</td>
+                      <td>Account Number</td>
+                      <td>Description</td>
+                      <td>Project</td>
+                      <td>Supervisor</td>
+                  </tr>
+                  <tr>
+                      <td><input type="submit" value="Remove"></td>
+                  </tr>
+                  <tr>
+                      <td><input type="submit" value="Assign Account"></td>
+                  </tr>
+              </table>
+            </div>
+      </form>
+    </div>
+  </body>
+</html>
