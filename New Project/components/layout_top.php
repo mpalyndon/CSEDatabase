@@ -8,7 +8,7 @@ session_start();
 <meta charset="utf-8" />
     <title>CSE Store</title>
     <meta charset="UTF-8" />
-    <meta name="author" content="Keloth Justyn Dylan, Ben McIntyre, " /> <!-- add group members -->
+    <meta name="author" content="Keloth Justyn Dylan, Ben McIntyre, Susman Shrestha" /> <!-- add group members -->
     <meta name="description" content="CSE Datbase" />
 
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"> <!-- Icons -->

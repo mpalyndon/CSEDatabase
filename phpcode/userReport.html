@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Transaction Report</title>
+    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <style>
+        body {
+          background-image: url('images/CSEStoreLogo.png');
+          background-repeat: no-repeat;
+          background-size: 300px;
+        }
+        </style>
+        
+    <div class="ContentArea">
+      
+        <h1><b>CSE Store | User Transaction Reports</b></h1>
+     
+          <form action="quiz.html" method="GET">
+
+        <h2>
+            <table cellpadding=0 cellspacing=0>
+                <tr>
+                    <td><p> Select the start and end date:</p></td>
+                </tr>
+                <tr>
+                    <td><p>Start Date:<input placeholder="DD/MM/YYYY">&nbsp;<i class="fa fa-calendar" style="font-size:24px"></i></p></td>
+                </tr>
+               <tr> 
+                   <td><p>End Date: <input placeholder= "DD/MM/YYYY">&nbsp;<i class="fa fa-calendar" style="font-size:24px"></i></p></td>
+                </tr>
+               
+                <tr>
+                   <td><p><label for="users">User: </label> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <select name="users" id="users">
+                        <option value="empty"></option>
+                        <option value="Jack">Jack Stephens</option>
+                        <option value="John">John Donovan</option>
+                        <option value="Kat">Katherine Mills</option>
+                    </select></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><p><label for="accounts">Accounts: </label> 
+                     <select name="accounts" id="accounts">
+                         <option value="empty"></option>
+                         <option value="Jack">452846.22.2541 - SoE John</option>
+                         <option value="John">132536.42.4571 - Flinders Press</p></option>
+                         <option value="Kat">552846.52.2584 - S&E Peter</p></option>
+                     </select></p>
+                     </td>
+                 </tr>
+            </table>
+            <br>
+            <input type="submit" value="Search" id = "button_charging" required>
+            <input type="submit" value="Clear" id = "button_charging" required>
+           
+            </p>
+            
+          </h2>  
+          <input type="submit" value="Back to Store" id = "button_charging_bts" required>
+            </div>
+            
+      </form>
+    </div>
+  </body>
+</html>
