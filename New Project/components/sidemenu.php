@@ -25,5 +25,8 @@
     <a class="sidemenu-btn" >Stock</a>
     <a class="sidemenu-subbtn" href="/StockOnHand.php">Stock on hand for Stocktake</a>
 
+    <a class="sidemenu-btn" >Loans</a>
+    <a class="sidemenu-subbtn" href="/ListLoans.php">List Loans</a>
+
 
 </div>
