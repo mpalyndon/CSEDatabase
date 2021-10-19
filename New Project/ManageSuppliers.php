@@ -27,7 +27,7 @@
       <TH><p>Mobile</p></TH>   
    </TR>
    <TR ALIGN="CENTER">
-   <TD><a class="primary-button" >Edit</a> </TD>
+   <TD><a class="primary-button" >Edit</a> <a class="primary-button" >Delete</a> </TD>
       <TD><p>Data 2</p></TD>
       <TD><p>Data 3</p></TD>
       <TD><p>Data 4</p></TD>
