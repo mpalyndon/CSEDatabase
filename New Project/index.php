@@ -64,19 +64,19 @@
         <br>
         <br>
         <br>
-        <a class="primary-button" href="/CreateNewProject.php">Stock on Hand for Stocktake</a>
+        <a class="primary-button" href="/StockOnHand.php">Stock on Hand for Stocktake</a>
         <br>
         <br>
         <br>
-        <a class="primary-button" href="/CreateNewProject.php">Inventory Purchase History</a>
+        <a class="primary-button" href="/InventoryPurchaseHistory.php">Inventory Purchase History</a>
         <br>
         <br>
         <br>
-        <a class="primary-button" href="/CreateNewProject.php">User Change reminders</a>
+        <a class="primary-button" href="/UserChangeReminders.php">User Change reminders</a>
         <br>
         <br>
         <br>
-        <a class="primary-button" href="/CreateNewProject.php">Items below low stock level</a>
+        <a class="primary-button" href="/ItemsBelowStockLevel.php">Items below low stock level</a>
         <br>
         <br>
         <br>
@@ -109,5 +109,6 @@
   </body>
   <?php require_once "components/layout_bottom.php"; ?>
   </html>
+
 
 
