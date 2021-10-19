@@ -95,7 +95,12 @@
         <a class="primary-button" href="/CreateNewProject.php">Account List</a>
         <br>
         <br>
-        </h3>  
+        <h1 class="subheader">Loans</h1>
+        <br>
+        <a class="primary-button" href="/ListLoans.php">List Loans</a>
+      <br>
+      <br>  
+      </h3>  
 </h2>
             </div>
         
@@ -104,4 +109,5 @@
   </body>
   <?php require_once "components/layout_bottom.php"; ?>
   </html>
+
 
