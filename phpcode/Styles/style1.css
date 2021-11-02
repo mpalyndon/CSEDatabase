@@ -9,10 +9,11 @@ body{
 	justify-content: center;
 	display: flex;
 	font-family: sans-serif;
+	background-color:gold;
 }
 .container{
 	position: relative;
-	margin-top: 100px;
+	margin-top: 250px;
 	width: 450px;
 	height: auto;
 	background: #dedede;
@@ -52,9 +53,9 @@ body{
 	outline: none;
 	cursor: pointer;
 	font-weight: bold;
-	background: #1A237E;
+	background: gold;
 	border-radius: 3px;
-	border: 1px solid #3949AB;
+	border: 1px solid #b99c19;
 	transition: .5s;
 }
 .login_form button:hover{
